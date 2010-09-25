@@ -1,9 +1,11 @@
-GEXFSharp - GEXF Graph File Format Library for .NET and Mono.
+GEXFSharp
 =================
+
+A GEXF Graph File Format Library for .NET and Mono.
 
 About
 ------------------
-The GEXF Graph File Format Library is based on the gexf4j-core library for Java (http://github.com/jmcampanini/gexf4j-core). It supports [GEXF 1.1](http://gexf.net/format/index.html) and thus can be used to read and write GEXF files for visualizing graphs using Gephi and any other GEXF-supporting application like graph-databases.
+The GEXF Graph File Format Library is based on the [gexf4j-core](http://github.com/jmcampanini/gexf4j-core) library for Java. It supports [GEXF 1.1](http://gexf.net/format/index.html) and thus can be used to read and write GEXF files for visualizing graphs using Gephi and any other GEXF-supporting application like graph-databases.
 
 License
 ------------------

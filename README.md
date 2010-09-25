@@ -10,7 +10,7 @@ License
 
 GEXFSharp uses the same license as gexf4j-core:
 
-Copyright [2010] [Achim Friedland]  (GEXFSharp)
+Copyright [2010] [Achim 'ahzf' Friedland]  (GEXFSharp)
 Copyright [2010] [Javier Campanini] (gexf4j-core)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at

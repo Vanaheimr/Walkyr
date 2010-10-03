@@ -98,13 +98,13 @@ namespace GEXFSharp
         #endregion
 
 
-        #region ToSafeString(this myDateTime)
+        #region ToFormatedString(this myDateTime, myFormat)
 
-        public static String ToSafeString(this DateTime? myDateTime)
+        public static String ToFormatedString(this DateTime? myDateTime, String myFormat)
         {
 
             if (myDateTime != null)
-                return myDateTime.Value.ToString();
+                return myDateTime.Value.ToString(myFormat);
 
             return "";
 

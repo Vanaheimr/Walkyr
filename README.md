@@ -40,6 +40,6 @@ Roadmap
 * 0.3 - Dynamics
 * 0.4 - Phylogeny
 * 0.5 - GEXF Import
- ...
+* ...
 * 1.0 - Finalized API
 

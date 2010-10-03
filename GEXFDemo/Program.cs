@@ -26,6 +26,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using GEXFSharp;
+using System.Xml;
 
 #endregion
 
@@ -196,13 +197,13 @@ namespace GEXFDemo
             var _RandomGrowingGraph     = RandomGrowingGraph(1500).Save("RandomGrowingGraph");
             var _RandomGrowingGraphXML  = _Nikolaus.ToXML();
 
-            //XmlParserContext context = new XmlParserContext(null, null, "", XmlSpace.None);
-            //var reader = new XmlValidatingReader(_XML1.ToString(), XmlNodeType.Element, context);
-            //reader.ValidationType = ValidationType.Schema;
+            //var _XmlReaderSettings = new XmlReaderSettings() { ValidationType = ValidationType.Schema };
+            //_XmlReaderSettings.Schemas.Add("http://www.gexf.net/1.1draft",     "http://www.gexf.net/1.1draft/gexf.xsd");
+            //_XmlReaderSettings.Schemas.Add("http://www.gexf.net/1.1draft/viz", "http://www.gexf.net/1.1draft/viz.xsd");
 
-            //while (reader.Read())
-            //{
-            //}
+            //var _XmlReader = XmlReader.Create("Nikolaus.gexf", _XmlReaderSettings);
+            //while (_XmlReader.Read())
+            //{ }
 
         }
 

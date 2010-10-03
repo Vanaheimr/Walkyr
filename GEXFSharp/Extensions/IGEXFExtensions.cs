@@ -114,17 +114,17 @@ namespace GEXFSharp
                             new XAttribute(xsi + "schemaLocation",   schemaLocation.NamespaceName),
                             new XAttribute("version",                myIGEXF.Version ?? ""));
 
-            var _meta = new XElement("meta",
-                            new XAttribute("lastmodifieddate",       myIGEXF.Metadata.LastModified.ToSafeString()),
-                            new XElement  ("creator",                myIGEXF.Metadata.Creator ?? ""),
-                            new XElement  ("description",            myIGEXF.Metadata.Description ?? ""));
+            var _meta = new XElement(gephi_ns + "meta",
+                            new XAttribute("lastmodifieddate",       myIGEXF.Metadata.LastModified.ToFormatedString("yyyy-MM-dd")),
+                            new XElement  (gephi_ns + "creator",     myIGEXF.Metadata.Creator ?? ""),
+                            new XElement  (gephi_ns + "description", myIGEXF.Metadata.Description ?? ""));
 
             if (myIGEXF.Metadata.Keywords.IsNotNullOrEmpty())
-                _meta.Add(new XElement("keywords", myIGEXF.Metadata.Keywords.ToCommaSeperatedList()));
+                _meta.Add(new XElement(gephi_ns + "keywords", myIGEXF.Metadata.Keywords.ToCommaSeperatedList()));
 
-            var _graph = new XElement("graph",
-                            new XAttribute("mode",                   myIGEXF.Graph.Mode),
-                            new XAttribute("defaultedgetype",        myIGEXF.Graph.DefaultEdgeType),
+            var _graph = new XElement(gephi_ns + "graph",
+                            new XAttribute("mode",                   myIGEXF.Graph.Mode.ToString().ToLower()),
+                            new XAttribute("defaultedgetype",        myIGEXF.Graph.DefaultEdgeType.ToString().ToLower()),
 
                             //new XElement("attributes", new XAttribute("class", "node")),    // optional!
                             //new XElement("attributes", new XAttribute("class", "edge")),    // optional!
@@ -158,14 +158,14 @@ namespace GEXFSharp
 
             #endregion
 
-            var _Nodes = new XElement("nodes");
+            var _Nodes = new XElement(gephi_ns + "nodes");
 
             // <node id="0" label="Hello world!" />
             if (myINodes != null)
                 foreach (var _INode in myINodes)
                 {
 
-                    var _XMLNode = new XElement("node",
+                    var _XMLNode = new XElement(gephi_ns + "node",
                                       new XAttribute("id",    _INode.Id),      // mandatory!
                                       new XAttribute("label", _INode.Label));  // mandatory!
 
@@ -203,14 +203,14 @@ namespace GEXFSharp
 
             #endregion
 
-            var _Edges = new XElement("edges");
+            var _Edges = new XElement(gephi_ns + "edges");
 
             // <edge id="0" source="0" target="1" />
             if (myIEdges != null)
                 foreach (var _IEdge in myIEdges)
                 {
 
-                    var _XMLEdge = new XElement("edge",
+                    var _XMLEdge = new XElement(gephi_ns + "edge",
                                       new XAttribute("id",     _IEdge.Id),            // mandatory!
                                       new XAttribute("source", _IEdge.Source.Id),     // mandatory!
                                       new XAttribute("target", _IEdge.Target.Id));    // mandatory!

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EA36174-FB21-474F-A8EB-33C7039B65DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GEXFSharp</RootNamespace>
+    <AssemblyName>GEXFSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>GEXFSharp.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>GEXFSharp.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\IGraphElementExtensions.cs" />
+    <Compile Include="Extensions\IGraphExtensions.cs" />
+    <Compile Include="Extensions\INodeShapeExtensions.cs" />
+    <Compile Include="Extensions\IMetadataExtensions.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Extensions\IEdgeExtensions.cs" />
+    <Compile Include="Extensions\INodeExtensions.cs" />
+    <Compile Include="Extensions\Dynamic\IDynamicExtensions.cs" />
+    <Compile Include="Extensions\IGEXFExtensions.cs" />
+    <Compile Include="Implementation\ASliceableDatum.cs" />
+    <Compile Include="Implementation\Data\Attribute.cs" />
+    <Compile Include="Implementation\Data\AttributeList.cs" />
+    <Compile Include="Implementation\Data\AttributeValue.cs" />
+    <Compile Include="Implementation\Data\AttributeValueList.cs" />
+    <Compile Include="Implementation\Dynamic\ADynamic.cs" />
+    <Compile Include="Implementation\Dynamic\ASlicable.cs" />
+    <Compile Include="Implementation\Dynamic\Slice.cs" />
+    <Compile Include="Implementation\Edge.cs" />
+    <Compile Include="Implementation\GEXF.cs" />
+    <Compile Include="Implementation\Graph.cs" />
+    <Compile Include="Implementation\Metadata.cs" />
+    <Compile Include="Implementation\Node.cs" />
+    <Compile Include="Implementation\Visualization\Color.cs" />
+    <Compile Include="Implementation\Visualization\Colors.cs" />
+    <Compile Include="Implementation\Visualization\NodeShape.cs" />
+    <Compile Include="Implementation\Visualization\Position.cs" />
+    <Compile Include="Interfaces\IGraphElement.cs" />
+    <Compile Include="Interfaces\Data\AttributeClass.cs" />
+    <Compile Include="Interfaces\Data\AttributeType.cs" />
+    <Compile Include="Interfaces\Data\IAttribute.cs" />
+    <Compile Include="Interfaces\Data\IAttributeList.cs" />
+    <Compile Include="Interfaces\Data\IAttributeValue.cs" />
+    <Compile Include="Interfaces\Data\IAttributeValueList.cs" />
+    <Compile Include="Interfaces\Data\IDatum.cs" />
+    <Compile Include="Interfaces\Visualization\Dynamic\IDynamic.cs" />
+    <Compile Include="Interfaces\Visualization\Dynamic\ISlice.cs" />
+    <Compile Include="Interfaces\Visualization\Dynamic\ISliceable.cs" />
+    <Compile Include="Interfaces\Visualization\Dynamic\TimeType.cs" />
+    <Compile Include="Interfaces\EdgeType.cs" />
+    <Compile Include="Interfaces\GEXFConstants.cs" />
+    <Compile Include="Interfaces\IDType.cs" />
+    <Compile Include="Interfaces\IEdge.cs" />
+    <Compile Include="Interfaces\IGEXF.cs" />
+    <Compile Include="Interfaces\IGraph.cs" />
+    <Compile Include="Interfaces\IMetadata.cs" />
+    <Compile Include="Interfaces\INode.cs" />
+    <Compile Include="Interfaces\Mode.cs" />
+    <Compile Include="Interfaces\Visualization\IPosition.cs" />
+    <Compile Include="Interfaces\Visualization\EdgeShape.cs" />
+    <Compile Include="Interfaces\Visualization\IColor.cs" />
+    <Compile Include="Interfaces\Visualization\INodeShape.cs" />
+    <Compile Include="Interfaces\Visualization\NodeShapes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

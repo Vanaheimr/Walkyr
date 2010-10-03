@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GEXFSharp</name>
+    </assembly>
+    <members>
+        <member name="T:GEXFSharp.IGraphElement">
+            <summary>
+            Common interface for INode and IEdge
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IGraphElement.Id">
+            <summary>
+            A unique indentification for nodes and edges
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IGraphElement.Label">
+            <summary>
+            A short label or description of a node or edge
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IGraphElement.Color">
+            <summary>
+            The color of this node or edge used for visualization
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IEdge.Source">
+            <summary>
+            The source node of this edge
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IEdge.Target">
+            <summary>
+            The target node of this edge
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IEdge.EdgeType">
+            <summary>
+            Defines wether this edge is DIRECTED, UNDIRECTED or MUTUAL
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IEdge.Weight">
+            <summary>
+            The weight of this edge
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IEdge.Thickness">
+            <summary>
+            The thickness of this edge used for visualization
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.IEdge.Shape">
+            <summary>
+            The shape of this edge used for visualization
+            </summary>
+        </member>
+        <member name="M:GEXFSharp.INode.ConnectTo(GEXFSharp.INode)">
+            <summary>
+            Connects this node with the given target node
+            </summary>
+        </member>
+        <member name="M:GEXFSharp.INode.ConnectTo(System.String,GEXFSharp.INode)">
+            <summary>
+            Connects this node with the given target node.
+            Uses the given EdgeId for creating a new edge.
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.INode.Edges">
+            <summary>
+            Returns all edges starting at this node
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.INode.Position">
+            <summary>
+            The position of this node for visualization
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.INode.Size">
+            <summary>
+            The size of this node for visualization
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.INode.Shape">
+            <summary>
+            The shape of this node for visualization
+            </summary>
+        </member>
+        <member name="P:GEXFSharp.INode.PID">
+            <summary>
+            The PID of this node
+            </summary>
+        </member>
+    </members>
+</doc>

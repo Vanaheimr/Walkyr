@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gexf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.1draft http://www.gexf.net/1.1draft/gexf.xsd" version="1.1" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns="http://www.gexf.net/1.1draft">
+  <meta lastmodifieddate="" xmlns="">
+    <creator>ahzf</creator>
+    <description>test graph</description>
+    <keywords>key1, key2</keywords>
+  </meta>
+  <graph mode="STATIC" defaultedgetype="DIRECTED" xmlns="">
+    <nodes>
+      <node id="NodeEins" label="Hello eins!" />
+      <node id="NodeZwei" label="Hello zwei!">
+        <viz:color red="255" green="255" blue="0" />
+      </node>
+      <node id="NodeDrei" label="Hello drei!">
+        <viz:color red="255" green="0" blue="0" />
+        <viz:shape value="DIAMOND" />
+      </node>
+    </nodes>
+    <edges>
+      <edge id="Edge1-2" source="NodeEins" target="NodeZwei" />
+      <edge id="Edge2-3" source="NodeZwei" target="NodeDrei" />
+      <edge id="Edge3-4" source="NodeDrei" target="4" />
+    </edges>
+  </graph>
+</gexf>

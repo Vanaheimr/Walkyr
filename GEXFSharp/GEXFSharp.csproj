@@ -76,10 +76,10 @@
     <Compile Include="Interfaces\Data\IAttributeValue.cs" />
     <Compile Include="Interfaces\Data\IAttributeValueList.cs" />
     <Compile Include="Interfaces\Data\IDatum.cs" />
-    <Compile Include="Interfaces\Visualization\Dynamic\IDynamic.cs" />
-    <Compile Include="Interfaces\Visualization\Dynamic\ISlice.cs" />
-    <Compile Include="Interfaces\Visualization\Dynamic\ISliceable.cs" />
-    <Compile Include="Interfaces\Visualization\Dynamic\TimeType.cs" />
+    <Compile Include="Interfaces\Dynamic\IDynamic.cs" />
+    <Compile Include="Interfaces\Dynamic\ISlice.cs" />
+    <Compile Include="Interfaces\Dynamic\ISliceable.cs" />
+    <Compile Include="Interfaces\Dynamic\TimeType.cs" />
     <Compile Include="Interfaces\EdgeType.cs" />
     <Compile Include="Interfaces\GEXFConstants.cs" />
     <Compile Include="Interfaces\IDType.cs" />

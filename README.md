@@ -27,6 +27,7 @@ Version 0.1 - ALPHA
 NOTE: The alpha version does NOT have a full test suite.
 
 There are still a lot of limitations which will be fixed in the next releases:
+
 * Dynamics
 * Hierarchy
 * Phylogeny

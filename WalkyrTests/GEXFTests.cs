@@ -1,44 +1,42 @@
-﻿/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- *
- *  Autor: Achim Friedland <achim@graph-database.org>, 2010
- *
- */
-
-#region Usings
-
-using System;
-using System.Text;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using GEXFSharp;
-using System.Xml;
 
-#endregion
-
-namespace GEXFDemo
+namespace de.ahzf.WalkyrTests
 {
 
-    public class Program
+    public class GEXFTests
     {
+
+
+        public void Run()
+        {
+
+            var _DataGraph = DataGraph().Save("DataGraph");
+            var _DataGraphXML = _DataGraph.ToXML();
+
+            var _Nikolaus = DasHausDesNikolaus().Save("Nikolaus");
+            var _NikolausXML = _Nikolaus.ToXML();
+
+            var _RandomGrowingGraph = RandomGrowingGraph(1500).Save("RandomGrowingGraph");
+            var _RandomGrowingGraphXML = _Nikolaus.ToXML();
+
+            //var _XmlReaderSettings = new XmlReaderSettings() { ValidationType = ValidationType.Schema };
+            //_XmlReaderSettings.Schemas.Add("http://www.gexf.net/1.1draft",     "http://www.gexf.net/1.1draft/gexf.xsd");
+            //_XmlReaderSettings.Schemas.Add("http://www.gexf.net/1.1draft/viz", "http://www.gexf.net/1.1draft/viz.xsd");
+
+            //var _XmlReader = XmlReader.Create("Nikolaus.gexf", _XmlReaderSettings);
+            //while (_XmlReader.Read())
+            //{ }
+
+        }
+
 
         #region DataGraph
 
-        public static GEXF DataGraph()
+        public GEXF DataGraph()
         {
 
             var _GEXF = new GEXF();
@@ -98,7 +96,7 @@ namespace GEXFDemo
 
         #region DasHausDesNikolaus()
 
-        public static GEXF DasHausDesNikolaus()
+        public GEXF DasHausDesNikolaus()
         {
 
             var _GEXF  = new GEXF();
@@ -131,7 +129,7 @@ namespace GEXFDemo
 
         #region RandomGrowingGraph(myNumberOfNodes, myNumberOfAdjecencies = 1)
 
-        public static GEXF RandomGrowingGraph(UInt32 myNumberOfNodes, UInt32 myNumberOfAdjecencies = 1)
+        public GEXF RandomGrowingGraph(UInt32 myNumberOfNodes, UInt32 myNumberOfAdjecencies = 1)
         {
 
             if (myNumberOfNodes > Int32.MaxValue)
@@ -183,29 +181,6 @@ namespace GEXFDemo
         }
 
         #endregion
-
-
-        public static void Main(string[] args)
-        {
-
-            var _DataGraph              = DataGraph().Save("DataGraph");
-            var _DataGraphXML           = _DataGraph.ToXML();
-
-            var _Nikolaus               = DasHausDesNikolaus().Save("Nikolaus");
-            var _NikolausXML            = _Nikolaus.ToXML();
-
-            var _RandomGrowingGraph     = RandomGrowingGraph(1500).Save("RandomGrowingGraph");
-            var _RandomGrowingGraphXML  = _Nikolaus.ToXML();
-
-            //var _XmlReaderSettings = new XmlReaderSettings() { ValidationType = ValidationType.Schema };
-            //_XmlReaderSettings.Schemas.Add("http://www.gexf.net/1.1draft",     "http://www.gexf.net/1.1draft/gexf.xsd");
-            //_XmlReaderSettings.Schemas.Add("http://www.gexf.net/1.1draft/viz", "http://www.gexf.net/1.1draft/viz.xsd");
-
-            //var _XmlReader = XmlReader.Create("Nikolaus.gexf", _XmlReaderSettings);
-            //while (_XmlReader.Read())
-            //{ }
-
-        }
 
     }
 

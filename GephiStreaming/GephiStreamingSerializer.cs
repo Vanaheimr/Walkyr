@@ -25,13 +25,13 @@ using de.ahzf.Blueprints.PropertyGraphs;
 
 #endregion
 
-namespace de.ahzf.Vanaheimr.Walkyr.GraphML
+namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
 {
 
-    public class GraphMLSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                   TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                   TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                   TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
+    public class GephiStreamingSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                          TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                          TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                          TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
 
           : IGraphSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                              TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
@@ -69,18 +69,8 @@ namespace de.ahzf.Vanaheimr.Walkyr.GraphML
 
             var StringBuilder = new StringBuilder();
 
-            StringBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-            StringBuilder.AppendLine("<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"");
-            StringBuilder.AppendLine("    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
-            StringBuilder.AppendLine("    xsi:schemaLocation=\"http://graphml.graphdrawing.org/xmlns");
-            StringBuilder.AppendLine("     http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">");
-            StringBuilder.AppendLine("  <graph id=\"" + Graph.Id + "\" edgedefault=\"directed\">");
-
             Graph.Vertices().ForEach(Vertex => StringBuilder.AppendLine(this.ToStringRepresentation(Vertex)));
             Graph.Edges()   .ForEach(Edge   => StringBuilder.AppendLine(this.ToStringRepresentation(Edge)));
-
-            StringBuilder.AppendLine("  </graph>");
-            StringBuilder.AppendLine("</graphml>");
 
             return StringBuilder.ToString();
 
@@ -91,7 +81,7 @@ namespace de.ahzf.Vanaheimr.Walkyr.GraphML
                                                        TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                        TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex)
         {
-            return "<node id=\"" + Vertex.Id + "\" />";
+            return "{\"an\":{\"" + Vertex.Id + "\":{}}}";
         }
 
         public String Serialize(IGenericPropertyEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
@@ -99,7 +89,7 @@ namespace de.ahzf.Vanaheimr.Walkyr.GraphML
                                                      TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                      TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Edge)
         {
-            return "<edge id=\"" + Edge.Id + "\" directed=\"true\" source=\"" + Edge.OutVertex.Id + "\" target=\"" + Edge.InVertex.Id + "\" />";
+            return "{\"ae\":{\"" + Edge.Id + "\":{\"source\":\"" + Edge.OutVertex.Id + "\",\"directed\":true,\"target\":\"" + Edge.InVertex.Id + "\"}}}";
         }
 
     }

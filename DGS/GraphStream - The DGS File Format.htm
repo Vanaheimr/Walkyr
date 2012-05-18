@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/news/feed/" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="/media//img/favicon.ico" />
+    <meta name="description" content="GraphStream, java library, API, Graph Visualisation, Graph Layout, " />
+    <meta name="Author" content="Yoann Pigné" />
+    <title>GraphStream - The DGS File Format</title>
+    
+<link rel="stylesheet" type="text/css" href="/media/css/doc-style.css" />
+<link href="/media/css/shCore.css" rel="stylesheet" type="text/css" />
+<link href="/media/css/shThemeEclipse.css" rel="stylesheet" type="text/css" />
+<script src="/media/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="/media/js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/media/js/shCore.js"></script>
+<script type="text/javascript" src="/media/js/shBrushJava.js"></script>
+<script type="text/javascript" src="/media/js/shBrushCss.js"></script>
+<script type="text/javascript" src="/media/js/shBrushXml.js"></script>
+<script type="text/javascript" src="/media/js/shBrushBash.js"></script>
+<script src="/media/js/documentation.js" type="text/javascript" charset="utf-8"></script>
+<meta id="document_id" name="document_id" content="100" />
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/media/css/mainGS.css" />
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19598785-1']);
+  _gaq.push(['_setDomainName', '.graphstream-project.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body>
+<div id="allbutfooter">
+
+<div id="head">
+<table><tr><td id="head1">
+<div id="login" style="position:absolute;top:1px;left:3px;font-size:smaller;">
+
+ <a href="/accounts/login/">sign in</a>&nbsp;<span id="global_messages" class="important">
+</span>
+</div>
+<div id="pages" class="pages">
+<ul>
+<li ><a href="/" title="Main page, general information">Home</a></li>
+<li ><a href="/download/" title="Download the binaries, source code and developper documentation">Download</a></li>
+<li ><a href="/doc/" title="Documents that help you install and uses GraphStream">Documentation</a></li>
+<li ><a href="/news/" title="News about GraphStream">News</a></li>
+<li ><a href="http://tracker.graphstream-project.org/" title="Issue tracker" >Tracker</a></li>
+<li ><a href="/doc/Applications/" title="Scientific and Reasearch Applications that use GraphStream" >Applications</a></li>
+</ul>
+</div>
+</td ><td id="head2"><img alt="GraphStream logo" src="/media/img/gs-50.png" style="height:35px;"/></td></tr></table>
+</div>
+
+
+<div style="padding:auto;margin:auto;width:800px">> <a href="/doc/">doc</a> > <a href="/doc/Advanced-Concepts/">Advanced-Concepts</a></div>
+
+
+
+
+
+<div id="content">
+
+<div id="content_l">
+<div id="side" class="smaller">
+<h2><a href="/news/">Last News</a></h2>
+<ul>
+
+<li><span class="smaller">2012-5-13</span> <a  href="/news/#16">&quot;Dynamic Network Day&quot; on May 24th</a></li>
+
+
+<li><span class="smaller">2012-4-30</span> <a  href="/news/#14">GraphsTream at the GSoC 2012 with Gephi</a></li>
+
+
+<li><span class="smaller">2011-11-11</span> <a  href="/news/#9">GraphStream 1.1 is released!</a></li>
+
+
+<li><span class="smaller">2011-5-24</span> <a  href="/news/#7">GraphStream 1.0 Video</a></li>
+
+
+</ul>
+<h2><a href="/doc/About-Us/">About Us</a></h2>
+<p>
+GraphStream is hosted by the <a href="http://www.univ-lehavre.fr/">University of Le Havre</a>. It is initiated and maintained by members of the <a href="http://litis.univ-lehavre.fr/ri2c/">RI<sub>2</sub>C</a> research team from the <a href="http://www.litislab.fr/">LITIS</a> computer science lab. 
+</p>
+<h2>Mailing lists</h2> 
+<ul>
+<li><a href="http://sympa.litislab.fr/sympa/subscribe/graphstream-users">users@graphstream-project.org</a></li>
+<li><a href="http://sympa.litislab.fr/sympa/subscribe/graphstream-dev">dev@graphstream-project.org</a></li>
+</ul>
+<h2>Development</h2>
+<ul>
+<li><a href="/doc/Roadmap/">Roadmap</a></li>
+<li><a href="/doc/API/">API</a></li>
+<li><a href="/doc/Source-Repository/">Source Repository</a></li>
+</ul>
+<h2><a href="/doc/">Documentation</a></h2>
+See the <a href="/doc/">Documentation</a> pages for detailed tutorials and help. See also:
+<ul>
+<li><a href="/doc/Gallery/">Gallery</a></li>
+<li><a href="/doc/Features/">Features</a></li>
+<li><a href="/doc/FAQ/">FAQ</a></li>
+</ul>
+
+
+</div>
+</div>
+<div id='content_r'>
+<div id='main'>
+
+
+<script type="text/javascript">
+<!--
+  SyntaxHighlighter.defaults['toolbar'] = false;
+  SyntaxHighlighter.all()
+-->
+</script>
+
+<div class="info txt_right">
+
+This document is for GraphStream's 1.1 release.
+
+</div>
+
+<h1>The DGS File Format Specification</h1> <g:plusone size='medium'></g:plusone><p>DGS is the default file format for GraphStream. This documentation documents the
+version 4 of the format, which is compatible with version 1.0 of GraphStream.
+GraphStream supports all of the previous versions of DGS.</p>
+<div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>DGS is a file format allowing to store graphs and dynamic graphs in a textual
+human readable way, yet with a small size allowing to store large graphs. Graph
+dynamics is defined using events like adding, deleting or changing a node or
+edge or adding, changing and removing attributes on the graph, nodes or edges.
+With DGS, graphs will therefore be seen as stream of such events.</p>
+</div>
+<div class="section" id="compression">
+<h2>Compression</h2>
+<p>Files following the DGS format are textual files (ASCII, UTF-8, etc.) that may
+be compressed using gzip. Indeed it is often useful and advantageous to
+compress dynamic graph streams because of their large redundancy and often very
+large size. The gzip format has been chosen since it is easily streamable and
+easy to use in Java. For example to open a gzip-ed file in Java and read its
+contents as any other textual file, one can use the following code snippet:</p>
+<pre class="brush: java; literal-block">
+BufferedReader buffer = new BufferedReader(
+    new InputStreamReader(
+            new GZIPInputStream(
+                    (InputStream)new FileInputStream(&quot;filename&quot;))));
+</pre>
+<p>Naturally, GraphStream automatically supports gzip-ed files.</p>
+</div>
+<div class="section" id="syntax">
+<h2>Syntax</h2>
+<p>DGS sees graphs as composed of nodes and edges. These elements can however be
+equipped with attributes. Attributes can be arbitrary strings, numbers, or
+vectors of strings or numbers. There can be any number of attributes per node
+and edge or per graph.</p>
+<p>The format is composed of a header and a body. The header contains two lines
+defining the format version and the graph name and optional lengths. The body
+contains the events descriptions that will make up the graph stream.</p>
+<p>The body is made of a sequence of steps containing zero or more events. Steps
+allow to introduce a notion of time inside the graph stream. One tick of the
+clock will pass at each step, and all the events in one step can be considered
+occurring at the same time (although, their order is preserved). It is however
+possible to omit step events or to add a step event between each event, as
+needed.</p>
+<p>Each event stands on one line terminated by a line separator. Each field on
+each line of the header and body is separated by one or more spacing characters
+(spaces and tabulations).</p>
+<p>Comments are allowed everywhere in the file excepted in the header. The two
+first lines of the file must therefore be free of any comment and must not be
+preceded by any blank lines.</p>
+<div class="section" id="the-header">
+<h3>The Header</h3>
+<p>The first line contains a magic cookie defining the file format. This line is
+invariant for each file in the DGS file format for a given version. It changes
+from version to version. Actually 004 is the latest:</p>
+<pre class="literal-block">
+DGS004
+</pre>
+<p>The second line contains three fields, the graph name followed by the number of
+steps and hen the total number of events in the graph. Theses numbers are only
+indicative and may be both set to zero. However, if known, they can describe
+the stream duration in number of steps (clock ticks) and number of events. In
+the example under, the graph name is myDynGraph, the number of steps is 2000
+and there are 100000 events total:</p>
+<pre class="literal-block">
+myDynGraph 2000 100000
+</pre>
+<p>This line is deprecated in GraphStream 1.0 and is now maintained only for
+compatibility reasons. Indeed DGS is a streamable format, and it is often very
+difficult to know by advance the number of events and steps that will be
+produced in the rest of the file. It is however still mandatory actually, but
+it will disappear in version 5 of the format. You can use:</p>
+<pre class="literal-block">
+null 0 0
+</pre>
+</div>
+<div class="section" id="the-body">
+<h3>The Body</h3>
+<p>Hereafter are listed the events one can encounter inside a graph stream. Some
+of these events can take parameters (also known as attributes). Parameters
+allows to define what values will be stored in a node or edge. A parameter is
+made of a name and a value. They are separated by a : (colon) or = (equal)
+sign.</p>
+<p>The accepted values are strings (any sequence of character enclosed by &quot;
+(double quote) characters), numbers, single words (like strings but without
+quotes since they do not contain spaces), vectors and colors. A vector is a
+sequence of strings, words or numbers separated by the , (comma) character.
+Vectors can contain heterogeneous elements (mix of strings, words, numbers and
+colors). A color is signaled by a dash # symbol followed by six hexadecimal
+numbers, two for the red, two for green and two for blue components of the
+color (#FF00FF is cyan for example). It can optionally contain height
+hexadecimal numbers, adding two numbers for the alpha component (transparency,
+#FF00FF88 is half transparent cyan).</p>
+<p>Here is the list of possible events:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">st</tt></dt>
+<dd><p class="first">Allows to define a new step (clock tick). The number that follows allows to
+identify the step. The number is only indicative and is arbitrary, but is a
+real number, stored as a double (this may change in next versions). The DGS
+graph reader does not reorder events according to this number.</p>
+<p>For the first step for example:</p>
+<pre class="last literal-block">
+st 0
+</pre>
+</dd>
+<dt><tt class="docutils literal">an</tt></dt>
+<dd><p class="first">Allows to add a node. The command is followed by the unique node identifier
+allowing to identify this node compared to others. This name can be a
+single word or a string delimited by the double quote character. Other
+fields allow to define parameters.</p>
+<p>The following example adds a node with identifier <tt class="docutils literal">n1</tt> and values
+<tt class="docutils literal">x=3.14159265</tt> and <tt class="docutils literal">y=1.61803399</tt> as attributes:</p>
+<pre class="last literal-block">
+an n1 x=3.14159265 y=1.61803399
+</pre>
+</dd>
+<dt><tt class="docutils literal">cn</tt></dt>
+<dd><p class="first">Allows to modify attributes values for a node.</p>
+<p>In this example we modify the <tt class="docutils literal">n1</tt> node attributes (notice that we use &quot;:&quot; as
+separator for parameters, both &quot;=&quot; and &quot;:&quot; are allowed):</p>
+<pre class="literal-block">
+cn n1 x:3 y:1
+</pre>
+<p>You can also remove an existing attribute by prefixing its identifier with
+a minus sign:</p>
+<pre class="literal-block">
+cn n1 -x -y
+</pre>
+<p class="last">In this example we remove the <tt class="docutils literal">x</tt> and <tt class="docutils literal">y</tt> attributes.</p>
+</dd>
+<dt><tt class="docutils literal">dn</tt></dt>
+<dd><p class="first">Allows to delete a node.</p>
+<p>In the example we delete the <tt class="docutils literal">n1</tt> node:</p>
+<pre class="last literal-block">
+dn n1
+</pre>
+</dd>
+<dt><tt class="docutils literal">ae</tt></dt>
+<dd><p class="first">Allows to add an edge. This command must be followed by the unique
+identifier of the edge, and then the identifiers of two other nodes. As for
+nodes, you can specify a parameter list. It is possible to create directed
+edges by adding a &quot;&gt;&quot; (greater-than) or &quot;&lt;&quot; (smaller-than) character
+between the nodes identifiers. This indicates the direction of the edge.
+When no &quot;&lt;&quot; or &quot;&gt;&quot; is present, the edge is not directed.</p>
+<p>The following examples creates an edge with identifier <tt class="docutils literal">e1</tt> between nodes
+<tt class="docutils literal">n0</tt> and <tt class="docutils literal">n1</tt> with a parameter weight and another edge <tt class="docutils literal">e2</tt> between
+nodes <tt class="docutils literal">n1</tt> and <tt class="docutils literal">n2</tt> that is directed from <tt class="docutils literal">n1</tt> to <tt class="docutils literal">n2</tt>:</p>
+<pre class="last literal-block">
+ae e1 n0 n1 weight=23
+ae e2 n1 &gt; n2 weight:40
+</pre>
+</dd>
+<dt><tt class="docutils literal">ce</tt></dt>
+<dd><p class="first">As for nodes, allows to modify the parameters of the edge.</p>
+<p>The following example change the weight parameter of the <tt class="docutils literal">e1</tt> edge:</p>
+<pre class="literal-block">
+ce e1 weight=10
+</pre>
+<p class="last">As for nodes, you can also remove attributes by prefixing the attribute
+identifier by a minus sign.</p>
+</dd>
+<dt><tt class="docutils literal">de</tt></dt>
+<dd><p class="first">Allows to delete an edge.</p>
+<p>Example:</p>
+<pre class="last literal-block">
+de e1
+</pre>
+</dd>
+<dt><tt class="docutils literal">cg</tt></dt>
+<dd><blockquote class="first">
+Changes the attributes of a graph.</blockquote>
+<p class="last">As for nodes (<tt class="docutils literal">cn</tt>) an edges (<tt class="docutils literal">ce</tt>), this allows to add or remove attributes
+directly on the graph. As usual, you can remove an attribute by prefixing
+its identifier by a minus sign.</p>
+</dd>
+<dt><tt class="docutils literal">cl</tt></dt>
+<dd>Clear the whole graph.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="miscellany">
+<h2>Miscellany</h2>
+<p>The format accepts empty lines, even if they contain spaces. It is possible to
+use the # character to introduce comments that will last until the end of the
+line where they appear. A line containing a single comment will be ignored, but
+it is possible to add comments at the end of a line.</p>
+</div>
+<div class="section" id="compatibility-with-previous-versions">
+<h2>Compatibility With Previous Versions</h2>
+<p>This version of the DGS file format, 004, is compatible with version 003, but
+is not compatible with the first and second versions of the format. The
+GraphStream library proposes graph readers for the old formats as well as for
+the new. It only provides a writer for the 004 version.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<p>One of the simplest examples is the graph that forms a triangle:</p>
+<pre class="literal-block">
+DGS004
+triangle 0 6
+an A
+an B
+an C
+ae AB A B
+ae BC B C
+ae CA C A
+</pre>
+<p>The same with directed edges:</p>
+<pre class="literal-block">
+DGS004
+triangled 0 6
+an A
+an B
+an C
+ae AB A &gt; B
+ae BC B &lt; C
+ae CA C &gt; A
+</pre>
+<p>The same with position attributes:</p>
+<pre class="literal-block">
+DGS004
+triangledp 0 6
+
+an A x:0   y:0
+an B x:1   y=0
+an C x=0.5 y=1
+
+ae AB A &gt; B
+ae BC B &lt; C
+ae CA C &gt; A
+</pre>
+<p>The same with more attributes (examples of vector attributes):</p>
+<pre class="literal-block">
+DGS004
+triangledpm 0 6
+
+an A x:0   y:0
+an B x:1   y=0
+an C x=0.5 y=1
+
+ae AB A &gt; B weight:1 values=1,3,5,none
+ae BC B &lt; C weight:5 values=none,2,4,6
+ae CA C &gt; A weight:2 values=none,1
+</pre>
+</div>
+<div class="section" id="the-dgs-formal-specification">
+<h2>The DGS formal specification</h2>
+<p>The grammar for the DGS format is given below in BNF notation:</p>
+<pre class="literal-block">
+&lt;DGS&gt;        ::= &lt;header&gt; ( &lt;event&gt; | &lt;comment&gt; | &lt;EOL&gt; )*
+&lt;header&gt;     ::= &lt;magic&gt; &lt;EOL&gt; &lt;id&gt; &lt;int&gt; &lt;int&gt; &lt;EOL&gt;
+&lt;magic&gt;      ::= &quot;DGS004&quot; | &quot;DGS003&quot;
+&lt;event&gt;      ::= ( &lt;an&gt; | &lt;cn&gt; | &lt;dn&gt; | &lt;ae&gt; | &lt;ce&gt; | &lt;de&gt; | &lt;cg&gt; | &lt;st&gt; | &lt;cl&gt; ) ( &lt;comment&gt; | &lt;EOL&gt; )
+&lt;an&gt;         ::= &quot;an&quot; &lt;id&gt; &lt;attributes&gt;
+&lt;cn&gt;         ::= &quot;cn&quot; &lt;id&gt; &lt;attributes&gt;
+&lt;dn&gt;         ::= &quot;dn&quot; &lt;id&gt;
+&lt;ae&gt;         ::= &quot;ae&quot; &lt;id&gt; &lt;id&gt; ( &lt;direction&gt; )? &lt;id&gt; &lt;attributes&gt;
+&lt;ce&gt;         ::= &quot;ce&quot; &lt;id&gt; &lt;attributes&gt;
+&lt;de&gt;         ::= &quot;de&quot; &lt;id&gt;
+&lt;cg&gt;         ::= &quot;cg&quot; &lt;attributes&gt;
+&lt;st&gt;         ::= &quot;st&quot; &lt;real&gt;
+&lt;cl&gt;         ::= &quot;cl&quot;
+&lt;attributes&gt; ::= ( &lt;attribute&gt; )*
+&lt;attribute&gt;  ::= ( &quot;+&quot; | &quot;-&quot; )? &lt;id&gt; ( &lt;assign&gt; &lt;value&gt; ( &quot;,&quot; &lt;value&gt; )* )?
+&lt;value&gt;      ::= &lt;string&gt; | &lt;real&gt; | &quot;&quot; | &lt;array&gt; | &lt;map&gt;
+&lt;array&gt;      ::= &quot;{&quot; ( &lt;value&gt; ( &quot;,&quot; &lt;value&gt; )* )? &quot;}&quot;
+&lt;map&gt;        ::= &quot;[&quot; ( &lt;mapping&gt; ( &quot;,&quot; &lt;mapping&gt; )* )? &quot;]&quot;
+&lt;mapping&gt;    ::= &lt;id&gt; &lt;assign&gt; &lt;value&gt;
+&lt;direction&gt;  ::= '&lt;' | '&gt;' | ''
+&lt;assign&gt;     ::= '=' | ':'
+&lt;id&gt;         ::= &lt;string&gt; | &lt;int&gt; | &lt;word&gt; ( '.' &lt;word&gt; )*
+
+&lt;comment&gt;    ::= &quot;#&quot; ( . )* &lt;EOL&gt;
+&lt;int&gt;        ::= '0' | ( '1' .. '9' ) ( '0' .. '9' )*
+&lt;real&gt;       ::= &lt;int&gt; ( &quot;.&quot; ( &quot;0&quot; )* &lt;int&gt; )?
+&lt;word&gt;       ::= ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '_' )*
+&lt;string&gt;     ::= '&quot;' ( [^'&quot;'] | '\&quot;' )* '&quot;'
+</pre>
+</div>
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+<div id="footer-space"></div>
+</div>
+<div id="footer">
+<p>Copyrigth  &copy; 2010, <a href="/doc/About-Us/">GraphStream Team</a>. All rights reserved.</p> </div>
+</body>
+</html>

@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkyrTests", "WalkyrTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueprintsTests", "..\Blueprints.NET\BlueprintsTests\BlueprintsTests.csproj", "{7F4CE297-4A42-47A8-9A0A-74BA46B09891}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphML", "GraphML\GraphML.csproj", "{0E75BD4B-22A3-444D-8DA0-39FD33012C61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,16 @@ Global
 		{7F4CE297-4A42-47A8-9A0A-74BA46B09891}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7F4CE297-4A42-47A8-9A0A-74BA46B09891}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7F4CE297-4A42-47A8-9A0A-74BA46B09891}.Release|x86.ActiveCfg = Release|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0E75BD4B-22A3-444D-8DA0-39FD33012C61}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

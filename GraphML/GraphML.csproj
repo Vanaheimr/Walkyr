@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A3507C2E-1A82-4342-BD42-F544275D6959}</ProjectGuid>
+    <ProjectGuid>{0E75BD4B-22A3-444D-8DA0-39FD33012C61}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>de.ahzf.Vanaheimr.Walkyr</RootNamespace>
-    <AssemblyName>Walkyr</AssemblyName>
+    <RootNamespace>de.ahzf.Vanaheimr.Walkyr.GraphML</RootNamespace>
+    <AssemblyName>GraphML</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Walkyr.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\GraphML.XML</DocumentationFile>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -42,9 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGraphSerializer.cs" />
-    <Compile Include="IEdgeSerializer.cs" />
-    <Compile Include="IVertexSerializer.cs" />
+    <Compile Include="ExtentionsMethods.cs" />
+    <Compile Include="GraphMLSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +54,10 @@
     <ProjectReference Include="..\..\Illias\Commons\Commons.csproj">
       <Project>{16C85DF8-5DE6-4A9F-9FC7-7CA5B0440DF3}</Project>
       <Name>Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Walkyr\Walkyr.csproj">
+      <Project>{A3507C2E-1A82-4342-BD42-F544275D6959}</Project>
+      <Name>Walkyr</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

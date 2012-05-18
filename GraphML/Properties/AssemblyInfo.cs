@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Walkyr")]
-[assembly: AssemblyDescription("Graph file format library for Blueprints.NET property graphs.")]
+[assembly: AssemblyTitle("GraphML")]
+[assembly: AssemblyDescription("GraphML file format library for Blueprints.NET property graphs.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ahzf.de")]
-[assembly: AssemblyProduct("Walkyr")]
+[assembly: AssemblyProduct("GraphML")]
 [assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010-2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bd9110fc-3b8e-4c2d-9a7f-96e9664c8e0d")]
+[assembly: Guid("410d8800-9826-4de2-997f-42eb41ce3f90")]
 
 // Version information for an assembly consists of the following four values:
 //

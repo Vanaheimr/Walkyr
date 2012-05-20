@@ -1,0 +1,5 @@
+"someMap": {
+             "name": {"type":"string", "value":"william"},
+             "age": {"type":"int", "value":76}
+},
+"someList" [{"type":"int", "value":1},{"type":"int", "value":2},{"type":"int", "value":3}]

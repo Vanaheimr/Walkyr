@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A3507C2E-1A82-4342-BD42-F544275D6959}</ProjectGuid>
+    <ProjectGuid>{1AD92031-8B3A-4BED-81EB-8A92B3B3D033}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>de.ahzf.Vanaheimr.Walkyr</RootNamespace>
-    <AssemblyName>Walkyr</AssemblyName>
+    <RootNamespace>GraphSON</RootNamespace>
+    <AssemblyName>GraphSON</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Walkyr.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\GraphSON.XML</DocumentationFile>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -42,24 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AStringGraphSerializer.cs" />
-    <Compile Include="AGraphSerializer.cs" />
-    <Compile Include="Interfaces\IHyperEdgeSerializer.cs" />
-    <Compile Include="Interfaces\IMultiEdgeSerializer.cs" />
-    <Compile Include="Interfaces\IGraphSerializer.cs" />
-    <Compile Include="Interfaces\IEdgeSerializer.cs" />
-    <Compile Include="Interfaces\IVertexSerializer.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Blueprints.NET\Blueprints\Blueprints.csproj">
-      <Project>{47FA1E7C-8C47-493D-A371-91A15D53BC95}</Project>
-      <Name>Blueprints</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Illias\Commons\Commons.csproj">
-      <Project>{16C85DF8-5DE6-4A9F-9FC7-7CA5B0440DF3}</Project>
-      <Name>Commons</Name>
-    </ProjectReference>
+    <Content Include="graph1.txt" />
+    <Content Include="graph2.txt" />
+    <Content Include="graph3.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

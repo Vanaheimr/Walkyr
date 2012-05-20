@@ -69,12 +69,13 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
 
             var StringBuilder = new StringBuilder();
 
-            Graph.Vertices().ForEach(Vertex => StringBuilder.AppendLine(this.ToStringRepresentation(Vertex)));
-            Graph.Edges()   .ForEach(Edge   => StringBuilder.AppendLine(this.ToStringRepresentation(Edge)));
+            Graph.Vertices().ForEach(Vertex => StringBuilder.AppendLine(this.Serialize(Vertex)));
+            Graph.Edges()   .ForEach(Edge   => StringBuilder.AppendLine(this.Serialize(Edge)));
 
             return StringBuilder.ToString();
 
         }
+
 
         public String Serialize(IGenericPropertyVertex<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                        TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
@@ -84,12 +85,31 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
             return "{\"an\":{\"" + Vertex.Id + "\":{}}}";
         }
 
+
         public String Serialize(IGenericPropertyEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                      TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                      TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                      TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Edge)
         {
             return "{\"ae\":{\"" + Edge.Id + "\":{\"source\":\"" + Edge.OutVertex.Id + "\",\"directed\":true,\"target\":\"" + Edge.InVertex.Id + "\"}}}";
+        }
+
+
+        public String Serialize(IGenericPropertyMultiEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                                          TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                                          TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                                          TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> MultiEdge)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public String Serialize(IGenericPropertyHyperEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                                          TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                                          TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                                          TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> HyperEdge)
+        {
+            throw new NotImplementedException();
         }
 
     }

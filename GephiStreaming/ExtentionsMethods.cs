@@ -179,7 +179,7 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
                                                 TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                 TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>().
 
-                                                ToStringRepresentation(Vertex);
+                                                Serialize(Vertex);
 
         }
 
@@ -251,13 +251,13 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
                                                 TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                 TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>().
 
-                                                ToStringRepresentation(Edge);
+                                                Serialize(Edge);
 
         }
 
         #endregion
 
-        #region ToGraphML(this Graph)
+        #region ToGephiStreaming(this Graph)
 
         /// <summary>
         /// Get a GephiStreaming representation for the given graph.
@@ -323,7 +323,7 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
                                                 TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                 TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>().
 
-                                                ToStringRepresentation(Graph);
+                                                Serialize(Graph);
 
         }
 

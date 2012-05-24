@@ -23,7 +23,7 @@ using System.Linq;
 using System.Text;
 
 using de.ahzf.Illias.Commons;
-using de.ahzf.Blueprints.PropertyGraphs;
+using de.ahzf.Vanaheimr.Blueprints;
 
 #endregion
 

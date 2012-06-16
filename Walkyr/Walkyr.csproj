@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Blueprints.NET\Blueprints\Blueprints.csproj">
+    <ProjectReference Include="..\..\Blueprints\Blueprints\Blueprints.csproj">
       <Project>{47FA1E7C-8C47-493D-A371-91A15D53BC95}</Project>
       <Name>Blueprints</Name>
     </ProjectReference>

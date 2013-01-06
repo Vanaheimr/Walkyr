@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphSON", "GraphSON\GraphS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{DE379EA9-D5BF-4750-88EF-F165A3CFC61B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eunomia", "..\Eunomia\Eunomia\Eunomia.csproj", "{1DF1A588-33B1-4168-9487-604FE5680681}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eunomia", "Vanaheimr\Eunomia\Eunomia\Eunomia.csproj", "{1DF1A588-33B1-4168-9487-604FE5680681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

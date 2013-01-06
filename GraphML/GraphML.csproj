@@ -57,7 +57,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Walkyr\Walkyr.csproj">
       <Project>{A3507C2E-1A82-4342-BD42-F544275D6959}</Project>
-      <Name>Walkyr %28Dependencies\Walkyr\Walkyr%29</Name>
+      <Name>Walkyr</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

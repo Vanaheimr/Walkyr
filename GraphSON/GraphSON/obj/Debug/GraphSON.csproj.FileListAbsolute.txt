@@ -1,0 +1,4 @@
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GraphSON\bin\Debug\GraphSON.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GraphSON\bin\Debug\GraphSON.pdb
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GraphSON\obj\Debug\GraphSON.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GraphSON\obj\Debug\GraphSON.pdb

@@ -1,0 +1,4 @@
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GML\bin\Debug\GML.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GML\bin\Debug\GML.pdb
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GML\obj\Debug\GML.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GML\obj\Debug\GML.pdb

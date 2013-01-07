@@ -1,0 +1,4 @@
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\bin\Debug\DGML.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\bin\Debug\DGML.pdb
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\obj\Debug\DGML.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\obj\Debug\DGML.pdb

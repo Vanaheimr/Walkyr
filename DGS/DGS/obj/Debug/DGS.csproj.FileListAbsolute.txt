@@ -1,0 +1,4 @@
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGS\bin\Debug\DGS.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGS\bin\Debug\DGS.pdb
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGS\obj\Debug\DGS.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGS\obj\Debug\DGS.pdb

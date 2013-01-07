@@ -1,0 +1,4 @@
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\bin\Debug\dotGraph.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\bin\Debug\dotGraph.pdb
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\obj\Debug\dotGraph.dll
+C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\obj\Debug\dotGraph.pdb

@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GraphML</name>
+    </assembly>
+    <members>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods">
+            <summary>
+            GraphML extention methods.
+            </summary>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods.NewGraphMLSerializer``20(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyGraph{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new GraphML serializer for the given graph.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            <param name="Graph">A graph.</param>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods.ToGraphML``20(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyGraph{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get a GraphML representation for the given graph.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            <param name="Graph">A graph.</param>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods.ToGraphML``20(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyVertex{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get a GraphML representation for the given vertex.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            <param name="Vertex">A vertex.</param>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods.ToGraphML``20(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyEdge{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get a GraphML representation for the given edge.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            <param name="Edge">A edge.</param>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods.ToGraphML``20(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyMultiEdge{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get a GraphML representation for the given multiedge.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            <param name="MultiEdge">A multiedge.</param>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.ExtentionsMethods.ToGraphML``20(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyHyperEdge{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get a GraphML representation for the given hyperedge.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            <param name="HyperEdge">A hyperedge.</param>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20">
+            <summary>
+            A GraphML serializer.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new GraphML serializer.
+            </summary>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.CheckAndFixPropertyValueType(System.String@)">
+            <summary>
+            Checks and fixes all property value types.
+            </summary>
+            <param name="Type">A property value type as string.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given graph.
+            </summary>
+            <param name="Graph">A graph.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyVertex{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given vertex.
+            </summary>
+            <param name="Vertex">A vertex.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given edge.
+            </summary>
+            <param name="Edge">A edge.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyMultiEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given multiedge.
+            </summary>
+            <param name="MultiEdge">A multiedge.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphML.GraphMLSerializer`20.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyHyperEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given hyperedge.
+            </summary>
+            <param name="HyperEdge">A hyperedge.</param>
+        </member>
+    </members>
+</doc>

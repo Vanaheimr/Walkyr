@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Walkyr</name>
+    </assembly>
+    <members>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IGraphSerializer`21">
+            <summary>
+            An interface for serializing graphs.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IVertexSerializer`21">
+            <summary>
+            An interface for serializing vertices.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IVertexSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyVertex{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given vertex.
+            </summary>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer`21">
+            <summary>
+            An interface for serializing edges.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given edge.
+            </summary>
+            <param name="Edge">An edge.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IMultiEdgeSerializer`21">
+            <summary>
+            An interface for serializing multiedges.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IMultiEdgeSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyMultiEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given multiedge.
+            </summary>
+            <param name="MultiEdge">An multiedge.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IHyperEdgeSerializer`21">
+            <summary>
+            An interface for serializing hyperedges.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IHyperEdgeSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyHyperEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given hyperedge.
+            </summary>
+            <param name="HyperEdge">An hyperedge.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IGraphSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given graph.
+            </summary>
+            <param name="Graph">A graph.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IGraphSerializerExtentions">
+            <summary>
+            Extention methods for the IGraphSerializer interface.
+            </summary>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IGraphSerializerExtentions.NewGraphSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IGraphSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20})">
+            <summary>
+            Create a new GraphSerializerArrow for the given GraphSerializer.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the graph serializer.</typeparam>
+            <param name="GraphSerializer">A graph serializer.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IGraphSerializerExtentions.NewGraphSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IGraphSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20},de.ahzf.Vanaheimr.Styx.MessageRecipient{``20},de.ahzf.Vanaheimr.Styx.MessageRecipient{``20}[])">
+            <summary>
+            Create a new GraphSerializerArrow for the given GraphSerializer
+            and adds the given recipients to the list of message recipients.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the graph serializer.</typeparam>
+            <param name="GraphSerializer">A graph serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IGraphSerializerExtentions.NewGraphSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IGraphSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{``20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{``20}[])">
+            <summary>
+            Create a new GraphSerializerArrow for the given GraphSerializer
+            and adds the given recipients to the list of message recipients.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the graph serializer.</typeparam>
+            <param name="GraphSerializer">A graph serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.GraphSerializerArrow`21">
+            <summary>
+            The GraphSerializerArrow serializes entire graphs.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IGraphSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20})">
+            <summary>
+            Creates a new GraphSerializerArrow.
+            </summary>
+            <param name="GraphSerializer">A graph serializer.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IGraphSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20},de.ahzf.Vanaheimr.Styx.MessageRecipient{`20},de.ahzf.Vanaheimr.Styx.MessageRecipient{`20}[])">
+            <summary>
+            Creates a new AbstractArrow and adds the given recipients
+            to the list of message recipients.
+            </summary>
+            <param name="GraphSerializer">A vertex serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IGraphSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{`20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{`20}[])">
+            <summary>
+            Creates a new AbstractArrow and adds the given recipients
+            to the list of message recipients.
+            </summary>
+            <param name="GraphSerializer">A vertex serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphSerializerArrow`21.ReceiveMessage(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Accepts a graph for further processing
+            and delivery to the subscribers.
+            </summary>
+            <param name="Graph">The sending graph.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.GraphSerializerArrow`21.ProcessMessage(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19},`20@)">
+            <summary>
+            Process the incoming graph and return an outgoing message.
+            </summary>
+            <param name="Graph">The incoming graph.</param>
+            <param name="SerializedGraph">The serialized graph.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20">
+            <summary>
+            An abstract string graph serializer.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21">
+            <summary>
+            An abstract graph serializer.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new abstract serializer.
+            </summary>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.ObjectSerializer(System.Object)">
+            <summary>
+            Serializes the given Object.
+            </summary>
+            <param name="Object">An Object.</param>
+            <returns>The serialized Object.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given graph.
+            </summary>
+            <param name="Graph">A graph.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyVertex{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given vertex.
+            </summary>
+            <param name="Vertex">A vertex.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given edge.
+            </summary>
+            <param name="Edge">A edge.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyMultiEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given multiedge.
+            </summary>
+            <param name="MultiEdge">A multiedge.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.Serialize(de.ahzf.Vanaheimr.Blueprints.IReadOnlyGenericPropertyHyperEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Serialize the given hyperedge.
+            </summary>
+            <param name="HyperEdge">A hyperedge.</param>
+        </member>
+        <member name="P:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.IncludePropertyTypes">
+            <summary>
+            Wether the property types should be included or not.
+            </summary>
+        </member>
+        <member name="P:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.IgnoreUnknownPropertyTypes">
+            <summary>
+            Wether to ignore properties with unknown property types.
+            </summary>
+        </member>
+        <member name="P:de.ahzf.Vanaheimr.Walkyr.AGraphSerializer`21.IncludeMultiAndHyperEdges">
+            <summary>
+            Wether the multi- and hyperedges should be included or not.
+            </summary>
+        </member>
+        <member name="F:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.VertexPropertyTypes">
+            <summary>
+            A keyid-key-valuetype dictionary for all vertices.
+            </summary>
+        </member>
+        <member name="F:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.EdgePropertyTypes">
+            <summary>
+            A keyid-key-valuetype dictionary for all edges.
+            </summary>
+        </member>
+        <member name="F:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.MultiEdgePropertyTypes">
+            <summary>
+            A keyid-key-valuetype dictionary for all multiedges.
+            </summary>
+        </member>
+        <member name="F:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.HyperEdgePropertyTypes">
+            <summary>
+            A keyid-key-valuetype dictionary for all hyperedges.
+            </summary>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new abstract string serializer.
+            </summary>
+            <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
+            <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
+            <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.CheckAndFixPropertyValueType(System.String@)">
+            <summary>
+            Checks and fixes all property value types.
+            </summary>
+            <param name="Type">A property value type as string.</param>
+            <returns>True if this property should be serialized; False otherwise.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.ObjectSerializer(System.Double)">
+            <summary>
+            Serializes the given Double.
+            </summary>
+            <param name="_Double">A Double.</param>
+            <returns>The serialized Double.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.ObjectSerializer(System.Object)">
+            <summary>
+            Serializes the given Object.
+            </summary>
+            <param name="Object">An Object.</param>
+            <returns>The serialized Object.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.GetOrCreateVertexPropertyKeyName(System.Collections.Generic.KeyValuePair{`3,`4},System.String@)">
+            <summary>
+            Get or create a new vertex keyid-key-valuetype mapping.
+            </summary>
+            <param name="KeyValuePair">A KeyValuePair.</param>
+            <param name="KeyId">The KeyId to use.</param>
+            <returns>True if this property should be serialized; False otherwise.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.GetOrCreateEdgePropertyKeyName(System.Collections.Generic.KeyValuePair{`8,`9},System.String@)">
+            <summary>
+            Get or create a new edge keyid-key-valuetype mapping.
+            </summary>
+            <param name="KeyValuePair">A KeyValuePair.</param>
+            <param name="KeyId">The KeyId to use.</param>
+            <returns>True if this property should be serialized; False otherwise.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.GetOrCreateMultiEdgePropertyKeyName(System.Collections.Generic.KeyValuePair{`13,`14},System.String@)">
+            <summary>
+            Get or create a new multiedge keyid-key-valuetype mapping.
+            </summary>
+            <param name="KeyValuePair">A KeyValuePair.</param>
+            <param name="KeyId">The KeyId to use.</param>
+            <returns>True if this property should be serialized; False otherwise.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.GetOrCreateHyperEdgePropertyKeyName(System.Collections.Generic.KeyValuePair{`18,`19},System.String@)">
+            <summary>
+            Get or create a new hyperedge keyid-key-valuetype mapping.
+            </summary>
+            <param name="KeyValuePair">A KeyValuePair.</param>
+            <param name="KeyId">The KeyId to use.</param>
+            <returns>True if this property should be serialized; False otherwise.</returns>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.AStringGraphSerializer`20.GetOrCreatePropertyKeyName(System.Collections.Generic.Dictionary{System.String,System.Tuple{System.String,System.String}},System.String,System.String,System.String@)">
+            <summary>
+            Get or create a new keyid-key-valuetype mapping.
+            </summary>
+            <param name="Dictionary">The dictionary to use.</param>
+            <param name="Key">The property key.</param>
+            <param name="Type">The property value type.</param>
+            <param name="KeyId">The KeyId to use.</param>
+            <returns>True if this property should be serialized; False otherwise.</returns>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IEdgeSerializerExtentions">
+            <summary>
+            Extention methods for the IEdgeSerializer interface.
+            </summary>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IEdgeSerializerExtentions.NewEdgeSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20})">
+            <summary>
+            Create a new EdgeSerializerArrow for the given EdgeSerializer.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the edge serializer.</typeparam>
+            <param name="EdgeSerializer">An edge serializer.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IEdgeSerializerExtentions.NewEdgeSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20},de.ahzf.Vanaheimr.Styx.MessageRecipient{``20},de.ahzf.Vanaheimr.Styx.MessageRecipient{``20}[])">
+            <summary>
+            Create a new EdgeSerializerArrow for the given EdgeSerializer
+            and adds the given recipients to the list of message recipients.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the edge serializer.</typeparam>
+            <param name="EdgeSerializer">An edge serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IEdgeSerializerExtentions.NewEdgeSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{``20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{``20}[])">
+            <summary>
+            Create a new EdgeSerializerArrow for the given EdgeSerializer
+            and adds the given recipients to the list of message recipients.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the edge serializer.</typeparam>
+            <param name="EdgeSerializer">An edge serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.EdgeSerializerArrow`21">
+            <summary>
+            The EdgeSerializerArrow serializes the incoming edges.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.EdgeSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20})">
+            <summary>
+            Creates a new EdgeSerializerArrow.
+            </summary>
+            <param name="EdgeSerializer">An edge serializer.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.EdgeSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20},de.ahzf.Vanaheimr.Styx.MessageRecipient{`20},de.ahzf.Vanaheimr.Styx.MessageRecipient{`20}[])">
+            <summary>
+            Creates a new AbstractArrow and adds the given recipients
+            to the list of message recipients.
+            </summary>
+            <param name="EdgeSerializer">An edge serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.EdgeSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IEdgeSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{`20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{`20}[])">
+            <summary>
+            Creates a new AbstractArrow and adds the given recipients
+            to the list of message recipients.
+            </summary>
+            <param name="EdgeSerializer">An edge serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.EdgeSerializerArrow`21.ReceiveMessage(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19},de.ahzf.Vanaheimr.Blueprints.IGenericPropertyEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Accepts an edge from a graph for further processing
+            and delivery to the subscribers.
+            </summary>
+            <param name="Graph">The sending graph.</param>
+            <param name="Edge">The sent edge.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.EdgeSerializerArrow`21.ProcessMessage(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyEdge{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19},`20@)">
+            <summary>
+            Process the incoming edge and return an outgoing message.
+            </summary>
+            <param name="Edge">The incoming edge.</param>
+            <param name="SerializedEdge">The serialized edge.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.IVertexSerializerExtentions">
+            <summary>
+            Extention methods for the IVertexSerializer interface.
+            </summary>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IVertexSerializerExtentions.NewVertexSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IVertexSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20})">
+            <summary>
+            Create a new VertexSerializerArrow for the given VertexSerializer.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the vertex serializer.</typeparam>
+            <param name="VertexSerializer">A vertex serializer.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IVertexSerializerExtentions.NewVertexSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IVertexSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20},de.ahzf.Vanaheimr.Styx.MessageRecipient{``20},de.ahzf.Vanaheimr.Styx.MessageRecipient{``20}[])">
+            <summary>
+            Create a new VertexSerializerArrow for the given VertexSerializer
+            and adds the given recipients to the list of message recipients.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the vertex serializer.</typeparam>
+            <param name="VertexSerializer">A vertex serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.IVertexSerializerExtentions.NewVertexSerializerArrow``21(de.ahzf.Vanaheimr.Walkyr.IVertexSerializer{``0,``1,``2,``3,``4,``5,``6,``7,``8,``9,``10,``11,``12,``13,``14,``15,``16,``17,``18,``19,``20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{``20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{``20}[])">
+            <summary>
+            Create a new VertexSerializerArrow for the given VertexSerializer
+            and adds the given recipients to the list of message recipients.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the vertex serializer.</typeparam>
+            <param name="VertexSerializer">A vertex serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="T:de.ahzf.Vanaheimr.Walkyr.VertexSerializerArrow`21">
+            <summary>
+            The VertexSerializerArrow serializes the incoming vertices.
+            </summary>
+            <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
+            <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
+            <typeparam name="TVertexLabel">The type of the vertex type.</typeparam>
+            <typeparam name="TKeyVertex">The type of the vertex property keys.</typeparam>
+            <typeparam name="TValueVertex">The type of the vertex property values.</typeparam>
+            
+            <typeparam name="TIdEdge">The type of the edge identifiers.</typeparam>
+            <typeparam name="TRevIdEdge">The type of the edge revision identifiers.</typeparam>
+            <typeparam name="TEdgeLabel">The type of the edge label.</typeparam>
+            <typeparam name="TKeyEdge">The type of the edge property keys.</typeparam>
+            <typeparam name="TValueEdge">The type of the edge property values.</typeparam>
+            
+            <typeparam name="TIdMultiEdge">The type of the multiedge identifiers.</typeparam>
+            <typeparam name="TRevIdMultiEdge">The type of the multiedge revision identifiers.</typeparam>
+            <typeparam name="TMultiEdgeLabel">The type of the multiedge label.</typeparam>
+            <typeparam name="TKeyMultiEdge">The type of the multiedge property keys.</typeparam>
+            <typeparam name="TValueMultiEdge">The type of the multiedge property values.</typeparam>
+            
+            <typeparam name="TIdHyperEdge">The type of the hyperedge identifiers.</typeparam>
+            <typeparam name="TRevIdHyperEdge">The type of the hyperedge revision identifiers.</typeparam>
+            <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
+            <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
+            <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
+            
+            <typeparam name="TReturnFormat">The return format of the serializer.</typeparam>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.VertexSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IVertexSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20})">
+            <summary>
+            Creates a new VertexSerializerArrow.
+            </summary>
+            <param name="VertexSerializer">A vertex serializer.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.VertexSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IVertexSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20},de.ahzf.Vanaheimr.Styx.MessageRecipient{`20},de.ahzf.Vanaheimr.Styx.MessageRecipient{`20}[])">
+            <summary>
+            Creates a new AbstractArrow and adds the given recipients
+            to the list of message recipients.
+            </summary>
+            <param name="VertexSerializer">A vertex serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.VertexSerializerArrow`21.#ctor(de.ahzf.Vanaheimr.Walkyr.IVertexSerializer{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19,`20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{`20},de.ahzf.Vanaheimr.Styx.IArrowReceiver{`20}[])">
+            <summary>
+            Creates a new AbstractArrow and adds the given recipients
+            to the list of message recipients.
+            </summary>
+            <param name="VertexSerializer">A vertex serializer.</param>
+            <param name="Recipient">A recipient of the processed messages.</param>
+            <param name="Recipients">The recipients of the processed messages.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.VertexSerializerArrow`21.ReceiveMessage(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyGraph{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19},de.ahzf.Vanaheimr.Blueprints.IGenericPropertyVertex{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19})">
+            <summary>
+            Accepts a vertex from a graph for further processing
+            and delivery to the subscribers.
+            </summary>
+            <param name="Graph">The sending graph.</param>
+            <param name="Vertex">The sent vertex.</param>
+        </member>
+        <member name="M:de.ahzf.Vanaheimr.Walkyr.VertexSerializerArrow`21.ProcessMessage(de.ahzf.Vanaheimr.Blueprints.IGenericPropertyVertex{`0,`1,`2,`3,`4,`5,`6,`7,`8,`9,`10,`11,`12,`13,`14,`15,`16,`17,`18,`19},`20@)">
+            <summary>
+            Process the incoming vertex and return an outgoing message.
+            </summary>
+            <param name="Vertex">The incoming vertex.</param>
+            <param name="SerializedVertex">The serialized edge.</param>
+        </member>
+    </members>
+</doc>

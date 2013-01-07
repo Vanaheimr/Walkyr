@@ -1,8 +1,0 @@
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\obj\Debug\GEXFTests.csprojResolveAssemblyReference.cache
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\bin\Debug\GEXFTests.dll
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\bin\Debug\GEXFTests.pdb
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\bin\Debug\GEXFSharp.dll
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\bin\Debug\GEXFSharp.pdb
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\bin\Debug\GEXFSharp.xml
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\obj\Debug\GEXFTests.dll
-C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFTests\obj\Debug\GEXFTests.pdb

@@ -2,3 +2,8 @@ C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\bin\Debug\dotGraph.pdb
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\obj\Debug\dotGraph.dll
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\dotGraph\obj\Debug\dotGraph.pdb
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\dotGraph\dotGraph\bin\Debug\dotGraph.XML
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\dotGraph\dotGraph\bin\Debug\dotGraph.dll
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\dotGraph\dotGraph\bin\Debug\dotGraph.pdb
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\dotGraph\dotGraph\obj\Debug\dotGraph.dll
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\dotGraph\dotGraph\obj\Debug\dotGraph.pdb

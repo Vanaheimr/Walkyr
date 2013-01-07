@@ -50,11 +50,11 @@
     <None Include="amazon.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Vanaheimr\Blueprints.NET\Blueprints\Blueprints.csproj">
+    <ProjectReference Include="..\..\..\Blueprints.NET\Blueprints\Blueprints.csproj">
       <Project>{47FA1E7C-8C47-493D-A371-91A15D53BC95}</Project>
       <Name>Blueprints</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Vanaheimr\Illias\Commons\Commons.csproj">
+    <ProjectReference Include="..\..\..\Illias\Commons\Commons.csproj">
       <Project>{16C85DF8-5DE6-4A9F-9FC7-7CA5B0440DF3}</Project>
       <Name>Commons</Name>
     </ProjectReference>

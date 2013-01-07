@@ -3,3 +3,8 @@ C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFSharp
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFSharp\bin\Debug\GEXFSharp.xml
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFSharp\obj\Debug\GEXFSharp.dll
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\GEXFSharp\obj\Debug\GEXFSharp.pdb
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\GEXF\GEXFSharp\bin\Debug\GEXFSharp.dll
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\GEXF\GEXFSharp\bin\Debug\GEXFSharp.pdb
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\GEXF\GEXFSharp\bin\Debug\GEXFSharp.xml
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\GEXF\GEXFSharp\obj\Debug\GEXFSharp.dll
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\GEXF\GEXFSharp\obj\Debug\GEXFSharp.pdb

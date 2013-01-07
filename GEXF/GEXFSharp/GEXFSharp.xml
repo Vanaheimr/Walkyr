@@ -60,6 +60,25 @@
             The PID of this node
             </summary>
         </member>
+        <member name="M:GEXFSharp.IGEXFExtensions.ToXML(GEXFSharp.IGEXF)">
+            <summary>
+            Translates the given IGEXF graph to its GEXF v1.1 XML representation
+            </summary>
+            <returns>A XDocument</returns>
+        </member>
+        <member name="M:GEXFSharp.IGEXFExtensions.Save(GEXFSharp.IGEXF,System.String)">
+            <summary>
+            Stores the given IGEXF graph on disk
+            </summary>
+            <param name="myFileName">The filename for storing the graph</param>
+        </member>
+        <member name="M:GEXFSharp.IGEXFExtensions.Save(GEXFSharp.IGEXF,System.String,System.Xml.Linq.SaveOptions)">
+            <summary>
+            Stores the given IGEXF graph on disk
+            </summary>
+            <param name="myFileName">The filename for storing the graph</param>
+            <param name="mySaveOptions">The SaveOptions</param>
+        </member>
         <member name="P:GEXFSharp.IEdge.Source">
             <summary>
             The source node of this edge
@@ -89,25 +108,6 @@
             <summary>
             The shape of this edge used for visualization
             </summary>
-        </member>
-        <member name="M:GEXFSharp.IGEXFExtensions.ToXML(GEXFSharp.IGEXF)">
-            <summary>
-            Translates the given IGEXF graph to its GEXF v1.1 XML representation
-            </summary>
-            <returns>A XDocument</returns>
-        </member>
-        <member name="M:GEXFSharp.IGEXFExtensions.Save(GEXFSharp.IGEXF,System.String)">
-            <summary>
-            Stores the given IGEXF graph on disk
-            </summary>
-            <param name="myFileName">The filename for storing the graph</param>
-        </member>
-        <member name="M:GEXFSharp.IGEXFExtensions.Save(GEXFSharp.IGEXF,System.String,System.Xml.Linq.SaveOptions)">
-            <summary>
-            Stores the given IGEXF graph on disk
-            </summary>
-            <param name="myFileName">The filename for storing the graph</param>
-            <param name="mySaveOptions">The SaveOptions</param>
         </member>
     </members>
 </doc>

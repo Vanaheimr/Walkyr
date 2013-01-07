@@ -1,3 +1,4 @@
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 *.pidb
 *.VisualState.xml
 *.suo
@@ -7,8 +8,17 @@
 *.krn.ctl
 *.psess
 */TestResult.xml
-*/obj
-*/bin
+*/[oO]bj
+*/[bB]in
 libs/*/obj
 libs/*/bin
+bin
+obj
+Debug
+Release
 Vanaheimr
+
+# mstest test results
+TestResults
+.psess
+.vsp

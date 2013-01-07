@@ -2,3 +2,8 @@ C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\bin\
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\bin\Debug\DGML.pdb
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\obj\Debug\DGML.dll
 C:\Users\ahzf\Desktop\Coding\V3\Aegir\Vanaheimr\Aegir\Vanaheimr\Walkyr\DGML\obj\Debug\DGML.pdb
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\DGML\DGML\bin\Debug\DGML.XML
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\DGML\DGML\bin\Debug\DGML.dll
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\DGML\DGML\bin\Debug\DGML.pdb
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\DGML\DGML\obj\Debug\DGML.dll
+C:\Users\ahzf\Desktop\Coding\V2\Odin\Vanaheimr\Walkyr\DGML\DGML\obj\Debug\DGML.pdb

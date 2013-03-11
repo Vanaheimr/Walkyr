@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("WalkyrTests")]
-[assembly: AssemblyDescription("Graph File Format Library for Blueprints.NET Property Graphs.")]
+[assembly: AssemblyDescription("Graph File Format Library for Balder Property Graphs.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ahzf.de")]
 [assembly: AssemblyProduct("WalkyrTests")]

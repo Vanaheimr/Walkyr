@@ -54,9 +54,9 @@
       <Project>{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D}</Project>
       <Name>Balder</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Blueprints.NET\Blueprints\Blueprints.csproj">
-      <Project>{47FA1E7C-8C47-493D-A371-91A15D53BC95}</Project>
-      <Name>Blueprints</Name>
+    <ProjectReference Include="..\..\Blueprints.NET\PropertyGraphs\PropertyGraphs.csproj">
+      <Project>{562AC94F-60EA-4911-8C62-684F02867783}</Project>
+      <Name>PropertyGraphs</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Illias\CommonsTests\CommonsTests.csproj">
       <Project>{02A5F706-A9AC-46BE-A428-EA6F990D8E21}</Project>

@@ -19,12 +19,12 @@
 
 using System;
 
-using de.ahzf.Vanaheimr.Styx;
-using de.ahzf.Vanaheimr.Blueprints;
+using eu.Vanaheimr.Styx;
+using eu.Vanaheimr.Balder;
 
 #endregion
 
-namespace de.ahzf.Vanaheimr.Walkyr
+namespace eu.Vanaheimr.Walkyr
 {
 
     #region IEdgeSerializerExtentions

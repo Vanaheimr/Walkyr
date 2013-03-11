@@ -22,7 +22,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace de.ahzf.Vanaheimr.Walkyr
+namespace eu.Vanaheimr.Walkyr
 {
 
     /// <summary>

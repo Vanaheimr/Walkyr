@@ -22,11 +22,11 @@
 //using System.IO;
 //using System.Collections.Generic;
 //using System.Text.RegularExpressions;
-//using de.ahzf.Vanaheimr.Styx;
+//using eu.Vanaheimr.Styx;
 
 //#endregion
 
-//namespace de.ahzf.Vanaheimr.Balder
+//namespace eu.Vanaheimr.Balder
 //{
 
 //    /// <summary>

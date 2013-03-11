@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GraphML")]
-[assembly: AssemblyDescription("GraphML file format library for Blueprints.NET property graphs.")]
+[assembly: AssemblyDescription("GraphML file format library for Balder property graphs.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ahzf.de")]
 [assembly: AssemblyProduct("GraphML")]

@@ -45,6 +45,36 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Blueprints.NET\BalderTests\BalderTests.csproj">
+      <Project>{4BF95036-986A-47EE-B48E-CF8C2B0E7841}</Project>
+      <Name>BalderTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Blueprints.NET\Balder\Balder.csproj">
+      <Project>{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D}</Project>
+      <Name>Balder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Blueprints.NET\Blueprints\Blueprints.csproj">
+      <Project>{47FA1E7C-8C47-493D-A371-91A15D53BC95}</Project>
+      <Name>Blueprints</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Illias\CommonsTests\CommonsTests.csproj">
+      <Project>{02A5F706-A9AC-46BE-A428-EA6F990D8E21}</Project>
+      <Name>CommonsTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Illias\Commons\Commons.csproj">
+      <Project>{16C85DF8-5DE6-4A9F-9FC7-7CA5B0440DF3}</Project>
+      <Name>Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Styx\StyxTests\StyxTests.csproj">
+      <Project>{6F2452F5-BF16-4577-9C5A-85C8D7B5289D}</Project>
+      <Name>StyxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Styx\Styx\Styx.csproj">
+      <Project>{3949790D-8591-4101-9E4D-CE7A758E7409}</Project>
+      <Name>Styx</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

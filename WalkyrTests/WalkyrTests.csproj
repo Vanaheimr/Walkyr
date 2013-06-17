@@ -46,15 +46,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Blueprints.NET\BalderTests\BalderTests.csproj">
+    <ProjectReference Include="..\..\Balder\BalderTests\BalderTests.csproj">
       <Project>{4BF95036-986A-47EE-B48E-CF8C2B0E7841}</Project>
       <Name>BalderTests</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Blueprints.NET\Balder\Balder.csproj">
+    <ProjectReference Include="..\..\Balder\Balder\Balder.csproj">
       <Project>{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D}</Project>
       <Name>Balder</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Blueprints.NET\PropertyGraphs\PropertyGraphs.csproj">
+    <ProjectReference Include="..\..\Balder\PropertyGraphs\PropertyGraphs.csproj">
       <Project>{562AC94F-60EA-4911-8C62-684F02867783}</Project>
       <Name>PropertyGraphs</Name>
     </ProjectReference>

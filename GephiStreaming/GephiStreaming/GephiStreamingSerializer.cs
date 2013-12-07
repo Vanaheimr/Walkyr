@@ -20,8 +20,9 @@
 using System;
 using System.Text;
 
-using de.ahzf.Illias.Commons;
-using de.ahzf.Vanaheimr.Blueprints;
+using eu.Vanaheimr.Illias.Commons;
+using eu.Vanaheimr.Walkyr;
+using eu.Vanaheimr.Balder;
 
 #endregion
 

@@ -23,6 +23,7 @@ using System.Text;
 using eu.Vanaheimr.Illias.Commons;
 using eu.Vanaheimr.Walkyr;
 using eu.Vanaheimr.Balder;
+using System.Collections.Generic;
 
 #endregion
 
@@ -65,7 +66,13 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
         public String Serialize(IReadOnlyGenericPropertyGraph<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                               TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                               TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph)
+                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph,
+
+                                IEnumerable<TKeyVertex>    VertexKeyFilter     = null,
+                                IEnumerable<TKeyEdge>      EdgeKeyFilter       = null,
+                                IEnumerable<TKeyMultiEdge> MultiEdgeKeyFilter  = null,
+                                IEnumerable<TKeyHyperEdge> HyperEdgeKeyFilter  = null)
+
         {
 
             var StringBuilder = new StringBuilder();
@@ -78,13 +85,31 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
         }
 
 
+        #region Serialize(Vertex, PropertyMapper = null, PropertyFilter = null, KeyFilter = null)
+
+        /// <summary>
+        /// Serialize the given vertex.
+        /// </summary>
+        /// <param name="Vertex">A property vertex.</param>
+        /// <param name="PropertyMapper">A delegate to map a given KeyValuePair to another KeyValuePair.</param>
+        /// <param name="PropertyFilter">A delegate to filter out some properties.</param>
+        /// <param name="KeyFilter">An enumeration of property keys to be removed.</param>
         public String Serialize(IReadOnlyGenericPropertyVertex<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                                TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                                TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                               TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex)
+                                                               TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex,
+
+                                KeyValueFilter<TKeyVertex, TValueVertex> PropertyFilter  = null,
+                                IEnumerable   <TKeyVertex>               KeyFilter       = null,
+                                KeyValueMapper<TKeyVertex, TValueVertex> PropertyMapper  = null)
+
         {
+
             return "{\"an\":{\"" + Vertex.Id + "\":{}}}";
+
         }
+
+        #endregion
 
 
         public String Serialize(IReadOnlyGenericPropertyEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
@@ -92,7 +117,9 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
                                                              TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Edge)
         {
+
             return "{\"ae\":{\"" + Edge.Id + "\":{\"source\":\"" + Edge.OutVertex.Id + "\",\"directed\":true,\"target\":\"" + Edge.InVertex.Id + "\"}}}";
+
         }
 
 
@@ -101,7 +128,9 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
                                                                   TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                                   TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> MultiEdge)
         {
+
             throw new NotImplementedException();
+
         }
 
 
@@ -110,7 +139,9 @@ namespace de.ahzf.Vanaheimr.Walkyr.GephiStreaming
                                                                   TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                                   TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> HyperEdge)
         {
+
             throw new NotImplementedException();
+
         }
 
     }

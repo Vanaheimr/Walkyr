@@ -128,10 +128,10 @@ namespace eu.Vanaheimr.Walkyr
 
             if (IncludePropertyTypes)
             {
-                
+
                 VertexPropertyTypes    = new Dictionary<String, Tuple<String, String>>();
                 EdgePropertyTypes      = new Dictionary<String, Tuple<String, String>>();
-                
+
                 if (IncludeMultiAndHyperEdges)
                 {
                     MultiEdgePropertyTypes = new Dictionary<String, Tuple<String, String>>();
@@ -186,7 +186,7 @@ namespace eu.Vanaheimr.Walkyr
             if (Object is Double)
                 return ObjectSerializer((Double) Object);
 
-            return Object.ToString();
+            return "\"" + Object.ToString() + "\"";
 
         }
 

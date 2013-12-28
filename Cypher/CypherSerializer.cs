@@ -18,6 +18,7 @@
 #region Usings
 
 using System;
+using System.Linq;
 using System.Text;
 
 using eu.Vanaheimr.Illias.Commons;
@@ -26,11 +27,11 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr.GraphML
+namespace eu.Vanaheimr.Walkyr.Cypher
 {
 
     /// <summary>
-    /// A GraphML serializer.
+    /// A Cypher serializer.
     /// </summary>
     /// <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
     /// <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
@@ -55,15 +56,15 @@ namespace eu.Vanaheimr.Walkyr.GraphML
     /// <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
     /// <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
     /// <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
-    public class GraphMLSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                   TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                   TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                   TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
+    public class CypherSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                  TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                  TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                  TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
 
-          : AStringGraphSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                   TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                   TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                   TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
+                     : AStringGraphSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                              TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                              TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
 
         where TIdVertex        : IEquatable<TIdVertex>,       IComparable<TIdVertex>,       IComparable, TValueVertex
         where TIdEdge          : IEquatable<TIdEdge>,         IComparable<TIdEdge>,         IComparable, TValueEdge
@@ -89,18 +90,20 @@ namespace eu.Vanaheimr.Walkyr.GraphML
 
         #region Constructor(s)
 
-        #region GraphMLSerializer(IncludePropertyTypes = false, IgnoreUnknownPropertyTypes = false, IncludeMultiAndHyperEdges = false)
+        #region CypherSerializer(IncludePropertyTypes = false, IgnoreUnknownPropertyTypes = false, IncludeMultiAndHyperEdges = false)
 
         /// <summary>
-        /// Creates a new GraphML serializer.
+        /// Creates a new Cypher serializer.
         /// </summary>
         /// <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
         /// <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
         /// <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
-        public GraphMLSerializer(Boolean IncludePropertyTypes       = false,
-                                 Boolean IgnoreUnknownPropertyTypes = false,
-                                 Boolean IncludeMultiAndHyperEdges  = false)
+        public CypherSerializer(Boolean IncludePropertyTypes       = false,
+                                Boolean IgnoreUnknownPropertyTypes = false,
+                                Boolean IncludeMultiAndHyperEdges  = false)
+
             : base(IncludePropertyTypes, IgnoreUnknownPropertyTypes, IncludeMultiAndHyperEdges)
+
         { }
 
         #endregion
@@ -195,35 +198,23 @@ namespace eu.Vanaheimr.Walkyr.GraphML
 
         {
 
-            var Header = new StringBuilder();
-            Header.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-            Header.AppendLine("<graphml xmlns=\"http://graphml.graphdrawing.org/xmlns\"");
-            Header.AppendLine("    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"");
+            var vertices = Graph.Vertices().Select(vertex => this.Serialize(vertex,
+                                                                            PropertyMapper: property => { 
+                                                                                if (property.Key.ToString() == "Id")
+                                                                                    return new KeyValuePair<TKeyVertex, TValueVertex>((TKeyVertex)(Object)"Id2", property.Value);
+                                                                                else
+                                                                                    return property;
+                                                                            },
+                                                                            KeyFilter: VertexKeyFilter));
+            var edges    = Graph.Edges().   Select(edge   => this.Serialize(edge));
 
-            if (IncludeMultiAndHyperEdges)
-            {
-                Header.AppendLine("    xsi:schemaLocation=\"http://www.graph-processing.org/xmlns");
-                Header.AppendLine("     http://www.graph-processing.org/xmlns/1.0/graphml-mhe.xsd\">");
-            }
-            else
-            {
-                Header.AppendLine("    xsi:schemaLocation=\"http://graphml.graphdrawing.org/xmlns");
-                Header.AppendLine("     http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd\">");
-            }
+            var StringBuilder = new StringBuilder("CREATE ");
+            vertices.ForEach(vertex => StringBuilder.Append(vertex).Append(", "));
+            edges.   ForEach(edge   => StringBuilder.Append(edge).  Append(", "));
 
-            Header.AppendLine("<graph id=\"" + Graph.Id + "\" edgedefault=\"directed\">");
+            StringBuilder.Length = StringBuilder.Length - 2;
 
-            var Body = new StringBuilder();
-            Graph.Vertices().ForEach(Vertex => Body.AppendLine(this.Serialize(Vertex)));
-            Graph.Edges()   .ForEach(Edge   => Body.AppendLine(this.Serialize(Edge)));
-
-            Body.AppendLine("</graph>");
-            Body.AppendLine("</graphml>");
-
-            return Header.
-                     AppendLine(SerializedPropertyTypeMap()).
-                     AppendLine(Body.ToString()).
-                     ToString();
+            return StringBuilder.ToString();
 
         }
 
@@ -249,22 +240,32 @@ namespace eu.Vanaheimr.Walkyr.GraphML
 
         {
 
-            String KeyId = null;
+            // CREATE (n:Actor { name: "Tom Hanks", age: 21 });
 
-            var head = "<node id=\"" + Vertex.Id + "\">" + Environment.NewLine;
+            var CypherString = "(" + Vertex.Id.ToString().Replace(" ", "") + ":" + Vertex.Label.ToString().Replace(" ", "");
 
-            Vertex.ForEach(property =>
-            {
+            var Properties = Vertex.GetProperties();
 
-                if (!property.Key.Equals(Vertex.IdKey))
-                {
-                    if (GetOrCreateVertexPropertyKeyName(property, out KeyId))
-                        head += "  <data key=\"" + KeyId + "\">" + ObjectSerializer(property.Value) + "</data>" + Environment.NewLine;
-                }
+            if (PropertyMapper != null)
+                Properties = Properties.Select(property => PropertyMapper(property));
 
-            });
+                Properties = Properties.Where(property => !property.Key.Equals(Vertex.IdKey) &&
+                                                          !property.Key.Equals(Vertex.RevIdKey) &&
+                                                          !property.Key.Equals(Vertex.LabelKey));
 
-            return head + "</node>";
+            if (PropertyFilter != null)
+                Properties = Vertex.Where(property => !PropertyFilter(property.Key, property.Value));
+
+            if (KeyFilter      != null && KeyFilter.Any())
+                Properties = Properties.Where(property => !KeyFilter.Contains(property.Key));
+
+            var SerializedProperties = Properties.Select(property => property.Key + ": " + ObjectSerializer(property.Value)).
+                                                  SaveAggregate((a, b) => a + ", " + b, "");
+
+            if (SerializedProperties.Length > 0)
+                return CypherString + " { " + SerializedProperties + " } )";
+
+            return CypherString + ")";
 
         }
 
@@ -282,22 +283,24 @@ namespace eu.Vanaheimr.Walkyr.GraphML
                                                                       TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Edge)
         {
 
-            String KeyId = null;
-            
-            var head = "<edge id=\"" + Edge.Id + "\" source=\"" + Edge.OutVertex.Id + "\" target=\"" + Edge.InVertex.Id + "\" label=\"" + Edge.Label + "\">" + Environment.NewLine;
+            //String KeyId = null;
 
-            Edge.ForEach(property =>
-            {
+            //var head = "<edge id=\"" + Edge.Id + "\" source=\"" + Edge.OutVertex.Id + "\" target=\"" + Edge.InVertex.Id + "\" label=\"" + Edge.Label + "\">" + Environment.NewLine;
 
-                if (!property.Key.Equals(Edge.IdKey))
-                {
-                    if (GetOrCreateEdgePropertyKeyName(property, out KeyId))
-                        head += "  <data key=\"" + KeyId + "\">" + ObjectSerializer(property.Value) + "</data>" + Environment.NewLine;
-                }
+            //Edge.ForEach(property =>
+            //{
 
-            });
+            //    if (!property.Key.Equals(Edge.IdKey))
+            //    {
+            //        if (GetOrCreateEdgePropertyKeyName(property, out KeyId))
+            //            head += "  <data key=\"" + KeyId + "\">" + ObjectSerializer(property.Value) + "</data>" + Environment.NewLine;
+            //    }
 
-            return head + "</edge>";
+            //});
+
+            //return head + "</edge>";
+
+            return "";
 
         }
 

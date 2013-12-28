@@ -20,6 +20,8 @@
 using System;
 
 using eu.Vanaheimr.Balder;
+using eu.Vanaheimr.Illias.Commons;
+using System.Collections.Generic;
 
 #endregion
 
@@ -85,10 +87,18 @@ namespace eu.Vanaheimr.Walkyr
         /// <summary>
         /// Serialize the given vertex.
         /// </summary>
+        /// <param name="Vertex">A property vertex.</param>
+        /// <param name="PropertyMapper">A delegate to map a given KeyValuePair to another KeyValuePair.</param>
+        /// <param name="PropertyFilter">A delegate to filter out some properties.</param>
+        /// <param name="KeyFilter">An enumeration of property keys to be removed.</param>
         TReturnFormat Serialize(IReadOnlyGenericPropertyVertex<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                                TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                                TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                               TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex);
+                                                               TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex,
+
+                                KeyValueFilter<TKeyVertex, TValueVertex> PropertyFilter  = null,
+                                IEnumerable   <TKeyVertex>               KeyFilter       = null,
+                                KeyValueMapper<TKeyVertex, TValueVertex> PropertyMapper  = null);
 
     }
 

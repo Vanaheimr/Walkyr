@@ -20,6 +20,7 @@
 using System;
 
 using eu.Vanaheimr.Balder;
+using System.Collections.Generic;
 
 #endregion
 
@@ -114,7 +115,12 @@ namespace eu.Vanaheimr.Walkyr
         TReturnFormat Serialize(IReadOnlyGenericPropertyGraph<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                               TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                               TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph);
+                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph,
+
+                                IEnumerable   <TKeyVertex>               VertexKeyFilter      = null,
+                                IEnumerable   <TKeyEdge>                 EdgeKeyFilter        = null,
+                                IEnumerable   <TKeyMultiEdge>            MultiEdgeKeyFilter   = null,
+                                IEnumerable   <TKeyHyperEdge>            HyperEdgeKeyFilter   = null);
 
     }
 

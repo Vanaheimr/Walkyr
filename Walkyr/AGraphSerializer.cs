@@ -20,6 +20,8 @@
 using System;
 
 using eu.Vanaheimr.Balder;
+using eu.Vanaheimr.Illias.Commons;
+using System.Collections.Generic;
 
 #endregion
 
@@ -169,20 +171,32 @@ namespace eu.Vanaheimr.Walkyr
         public abstract TReturnFormat Serialize(IReadOnlyGenericPropertyGraph<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                                               TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                                               TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph);
+                                                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph,
+
+                                                IEnumerable<TKeyVertex>    VertexKeyFilter     = null,
+                                                IEnumerable<TKeyEdge>      EdgeKeyFilter       = null,
+                                                IEnumerable<TKeyMultiEdge> MultiEdgeKeyFilter  = null,
+                                                IEnumerable<TKeyHyperEdge> HyperEdgeKeyFilter  = null);
 
         #endregion
 
-        #region (abstract) Serialize(Vertex)
+        #region (abstract) Serialize(Vertex, PropertyMapper = null, PropertyFilter = null, KeyFilter = null)
 
         /// <summary>
         /// Serialize the given vertex.
         /// </summary>
-        /// <param name="Vertex">A vertex.</param>
+        /// <param name="Vertex">A property vertex.</param>
+        /// <param name="PropertyMapper">A delegate to map a given KeyValuePair to another KeyValuePair.</param>
+        /// <param name="PropertyFilter">A delegate to filter out some properties.</param>
+        /// <param name="KeyFilter">An enumeration of property keys to be removed.</param>
         public abstract TReturnFormat Serialize(IReadOnlyGenericPropertyVertex<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
                                                                                TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                                                                TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                                               TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex);
+                                                                               TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex,
+
+                                                KeyValueFilter<TKeyVertex, TValueVertex> PropertyFilter  = null,
+                                                IEnumerable   <TKeyVertex>               KeyFilter       = null,
+                                                KeyValueMapper<TKeyVertex, TValueVertex> PropertyMapper  = null);
 
         #endregion
 

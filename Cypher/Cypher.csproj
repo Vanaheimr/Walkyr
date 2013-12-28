@@ -1,30 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0E75BD4B-22A3-444D-8DA0-39FD33012C61}</ProjectGuid>
+    <ProjectGuid>{E912A71D-1CB2-4535-931B-07E662BC6CA6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>de.ahzf.Vanaheimr.Walkyr.GraphML</RootNamespace>
-    <AssemblyName>GraphML</AssemblyName>
+    <RootNamespace>Cypher</RootNamespace>
+    <AssemblyName>Cypher</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\GraphML.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Cypher.XML</DocumentationFile>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +30,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,33 +41,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExtentionsMethods.cs" />
-    <Compile Include="GraphMLSerializer.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Balder\Balder\Balder.csproj">
-      <Project>{D2B4E7C7-0524-4DE5-9D62-2DE05682A74D}</Project>
+    <ProjectReference Include="..\..\Balder\Balder\Balder.csproj">
+      <Project>{d2b4e7c7-0524-4de5-9d62-2de05682a74d}</Project>
       <Name>Balder</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Illias\Commons.NET4.5\Commons.NET4.5.csproj">
+    <ProjectReference Include="..\..\Eunomia\Eunomia\Eunomia.csproj">
+      <Project>{1df1a588-33b1-4168-9487-604fe5680681}</Project>
+      <Name>Eunomia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Illias\Commons.NET4.5\Commons.NET4.5.csproj">
       <Project>{ccc826d7-9ac7-4ce6-82f8-b835168eba35}</Project>
       <Name>Commons.NET4.5</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Illias\Commons\Commons.csproj">
-      <Project>{D3B1AF79-161F-4299-8B14-133286D635B8}</Project>
+    <ProjectReference Include="..\..\Illias\Commons\Commons.csproj">
+      <Project>{d3b1af79-161f-4299-8b14-133286d635b8}</Project>
       <Name>Commons %28Dependencies\Commons\Commons%29</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Styx\Styx.NET4.5\Styx.NET4.5.csproj">
+    <ProjectReference Include="..\..\Styx\Styx.NET4.5\Styx.NET4.5.csproj">
       <Project>{af76ecc0-2ca5-4cff-9e1e-ff5478c4b6e4}</Project>
       <Name>Styx.NET4.5</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Styx\Styx\Styx.csproj">
+    <ProjectReference Include="..\..\Styx\Styx\Styx.csproj">
       <Project>{3949790d-8591-4101-9e4d-ce7a758e7409}</Project>
       <Name>Styx</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Walkyr\Walkyr.csproj">
-      <Project>{A3507C2E-1A82-4342-BD42-F544275D6959}</Project>
+    <ProjectReference Include="..\Walkyr\Walkyr.csproj">
+      <Project>{a3507c2e-1a82-4342-bd42-f544275d6959}</Project>
       <Name>Walkyr</Name>
     </ProjectReference>
   </ItemGroup>

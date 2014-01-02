@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Walkyr")]
 [assembly: AssemblyDescription("Graph file format library for Balder property graphs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ahzf.de")]
+[assembly: AssemblyCompany("GraphDefined")]
 [assembly: AssemblyProduct("Walkyr")]
-[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010-2012")]
+[assembly: AssemblyCopyright("Copyright © 2010-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -23,15 +23,16 @@ using System.Text;
 using System.Collections.Generic;
 
 using eu.Vanaheimr.Illias.Commons;
+using eu.Vanaheimr.Illias.Commons.Collections;
 using eu.Vanaheimr.Balder;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr.Cypher
+namespace eu.Vanaheimr.Walkyr.BalderSON
 {
 
     /// <summary>
-    /// A Cypher serializer.
+    /// A BalderSON graph serializer.
     /// </summary>
     /// <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
     /// <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
@@ -56,15 +57,15 @@ namespace eu.Vanaheimr.Walkyr.Cypher
     /// <typeparam name="THyperEdgeLabel">The type of the hyperedge label.</typeparam>
     /// <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
     /// <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
-    public class CypherSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                  TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                  TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                  TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
+    public class BalderSONSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                     TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                     TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                     TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
 
-                     : AStringGraphSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                              TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                              TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                              TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
+          : AStringGraphSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                   TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                   TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                   TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
 
         where TIdVertex        : IEquatable<TIdVertex>,       IComparable<TIdVertex>,       IComparable, TValueVertex
         where TIdEdge          : IEquatable<TIdEdge>,         IComparable<TIdEdge>,         IComparable, TValueEdge
@@ -90,19 +91,41 @@ namespace eu.Vanaheimr.Walkyr.Cypher
 
         #region Constructor(s)
 
-        #region CypherSerializer(IncludePropertyTypes = false, IgnoreUnknownPropertyTypes = false, IncludeMultiAndHyperEdges = false)
+        #region BalderSONSerializer(IncludePropertyTypes = false, IgnoreUnknownPropertyTypes = false, IncludeMultiAndHyperEdges = false)
 
         /// <summary>
-        /// Creates a new Cypher serializer.
+        /// Creates a new BalderSON graph (de-)serializer.
         /// </summary>
         /// <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
         /// <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
         /// <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
-        public CypherSerializer(Boolean IncludePropertyTypes       = false,
-                                Boolean IgnoreUnknownPropertyTypes = false,
-                                Boolean IncludeMultiAndHyperEdges  = false)
+        public BalderSONSerializer(Boolean                      IncludePropertyTypes         = false,
+                                   Boolean                      IgnoreUnknownPropertyTypes   = false,
+                                   Boolean                      IncludeMultiAndHyperEdges    = false,
 
-            : base(IncludePropertyTypes, IgnoreUnknownPropertyTypes, IncludeMultiAndHyperEdges)
+                                   Func<TIdVertex,    String>   VertexIdSerializer           = null,
+                                   Func<TIdEdge,      String>   EdgeIdSerializer             = null,
+                                   Func<TIdMultiEdge, String>   MultiEdgeIdSerializer        = null,
+                                   Func<TIdHyperEdge, String>   HyperEdgeIdSerializer        = null,
+
+                                   Func<TKeyVertex,   String>   TKeyVertexSerializer         = null,
+                                   Func<TValueVertex, String>   TValueVertexSerializer       = null,
+                                   Func<TKeyEdge,     String>   TKeyEdgeSerializer           = null,
+                                   Func<TValueEdge,   String>   TValueEdgeSerializer         = null)
+
+            : base(IncludePropertyTypes,
+                   IgnoreUnknownPropertyTypes,
+                   IncludeMultiAndHyperEdges,
+
+                   VertexIdSerializer,
+                   EdgeIdSerializer,
+                   MultiEdgeIdSerializer,
+                   HyperEdgeIdSerializer,
+
+                   TKeyVertexSerializer,
+                   TValueVertexSerializer,
+                   TKeyEdgeSerializer,
+                   TValueEdgeSerializer)
 
         { }
 
@@ -198,23 +221,44 @@ namespace eu.Vanaheimr.Walkyr.Cypher
 
         {
 
-            var vertices = Graph.Vertices().Select(vertex => this.Serialize(vertex,
-                                                                            PropertyMapper: property => { 
-                                                                                if (property.Key.ToString() == "Id")
-                                                                                    return new KeyValuePair<TKeyVertex, TValueVertex>((TKeyVertex)(Object)"Id2", property.Value);
-                                                                                else
-                                                                                    return property;
-                                                                            },
-                                                                            KeyFilter: VertexKeyFilter));
-            var edges    = Graph.Edges().   Select(edge   => this.Serialize(edge));
+            var Body = new StringBuilder();
+            Graph.Vertices().ForEach(Vertex => Body.AppendLine(this.Serialize(Vertex)));
+            Graph.Edges()   .ForEach(Edge   => Body.AppendLine(this.Serialize(Edge)));
 
-            var StringBuilder = new StringBuilder("CREATE ");
-            vertices.ForEach(vertex => StringBuilder.Append(vertex).Append(", "));
-            edges.   ForEach(edge   => StringBuilder.Append(edge).  Append(", "));
+            return "";
 
-            StringBuilder.Length = StringBuilder.Length - 2;
+        }
 
-            return StringBuilder.ToString();
+        #endregion
+
+        #region SerializeProperties(Properties)
+
+        public String SerializeProperties<TKey, TValue>(IReadOnlyProperties<TKey, TValue>  Properties,
+                                                        Func<TKey,   String>               KeySerializer,
+                                                        Func<TValue, String>               ValueSerializer)
+
+            where TKey : IEquatable<TKey>, IComparable<TKey>, IComparable
+
+        {
+
+            var VertexPropertyList = new List<String>();
+            var VertexPropertyValue = "";
+
+            foreach (var p in Properties)
+            {
+
+                var _JSONString = p.Value as JSONString;
+
+                if (_JSONString != null)
+                    VertexPropertyValue = _JSONString.JSONString;
+                else
+                    VertexPropertyValue = ValueSerializer(p.Value);
+
+                VertexPropertyList.Add(String.Concat(@"""", p.Key, @""": ", VertexPropertyValue));
+
+            }
+
+            return VertexPropertyList.CSVAggregate(@"""Properties"": { ", " }");
 
         }
 
@@ -234,38 +278,24 @@ namespace eu.Vanaheimr.Walkyr.Cypher
                                                                         TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                                                         TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex,
 
-                                         KeyValueFilter<TKeyVertex, TValueVertex> PropertyFilter  = null,
-                                         IEnumerable   <TKeyVertex>               KeyFilter       = null,
-                                         KeyValueMapper<TKeyVertex, TValueVertex> PropertyMapper  = null)
+                                         KeyValueFilter<TKeyVertex, TValueVertex>  PropertyFilter  = null,
+                                         IEnumerable   <TKeyVertex>                KeyFilter       = null,
+                                         KeyValueMapper<TKeyVertex, TValueVertex>  PropertyMapper  = null)
 
         {
 
-            // CREATE (n:Actor { name: "Tom Hanks", age: 21 });
+            var SerializedVertex  = new StringBuilder(@"{ ""AddVertex"": { ").Append(SerializeProperties(Vertex, TKeyVertexSerializer, TValueVertexSerializer));
 
-            var CypherString = "(" + Vertex.Id.ToString().Replace(" ", "") + ":" + Vertex.Label.ToString().Replace(" ", "");
+            var SerializedEdges   = Vertex.OutEdges().Select(e => String.Concat(@"{ ""InVertex"": ",
+                                                                                VertexIdSerializer(e.InVertex.Id),
+                                                                                ", ",
+                                                                                SerializeProperties(e, TKeyEdgeSerializer, TValueEdgeSerializer),
+                                                                                " }"));
 
-            var Properties = Vertex.GetProperties();
+            if (SerializedEdges.Any())
+                SerializedVertex.AppendCSV(@", ""OutEdges"": [ ", SerializedEdges, " ]");
 
-            if (PropertyMapper != null)
-                Properties = Properties.Select(property => PropertyMapper(property));
-
-                Properties = Properties.Where(property => !property.Key.Equals(Vertex.IdKey) &&
-                                                          !property.Key.Equals(Vertex.RevIdKey) &&
-                                                          !property.Key.Equals(Vertex.LabelKey));
-
-            if (PropertyFilter != null)
-                Properties = Vertex.Where(property => !PropertyFilter(property.Key, property.Value));
-
-            if (KeyFilter      != null && KeyFilter.Any())
-                Properties = Properties.Where(property => !KeyFilter.Contains(property.Key));
-
-            var SerializedProperties = Properties.Select(property => property.Key + ": " + ObjectSerializer(property.Value)).
-                                                  SaveAggregate((a, b) => a + ", " + b, "");
-
-            if (SerializedProperties.Length > 0)
-                return CypherString + " { " + SerializedProperties + " } )";
-
-            return CypherString + ")";
+            return SerializedVertex.Append("} }").ToString();
 
         }
 

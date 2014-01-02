@@ -18,7 +18,10 @@
 #region Usings
 
 using System;
+using System.Web;
 using System.Collections.Generic;
+
+using eu.Vanaheimr.Balder;
 
 #endregion
 
@@ -86,6 +89,17 @@ namespace eu.Vanaheimr.Walkyr
 
         #region Data
 
+        protected readonly Func<TIdVertex,    String>                             VertexIdSerializer;
+        protected readonly Func<TIdEdge,      String>                             EdgeIdSerializer;
+        protected readonly Func<TIdMultiEdge, String>                             MultiEdgeIdSerializer;
+        protected readonly Func<TIdHyperEdge, String>                             HyperEdgeIdSerializer;
+
+        protected readonly Func<TKeyVertex,   String>                             TKeyVertexSerializer;
+        protected readonly Func<TValueVertex, String>                             TValueVertexSerializer;
+        protected readonly Func<TKeyEdge,     String>                             TKeyEdgeSerializer;
+        protected readonly Func<TValueEdge,   String>                             TValueEdgeSerializer;
+
+
         /// <summary>
         /// A keyid-key-valuetype dictionary for all vertices.
         /// </summary>
@@ -118,13 +132,34 @@ namespace eu.Vanaheimr.Walkyr
         /// <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
         /// <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
         /// <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
-        public AStringGraphSerializer(Boolean IncludePropertyTypes       = false,
-                                      Boolean IgnoreUnknownPropertyTypes = false,
-                                      Boolean IncludeMultiAndHyperEdges  = false)
+        public AStringGraphSerializer(Boolean                       IncludePropertyTypes        = false,
+                                      Boolean                       IgnoreUnknownPropertyTypes  = false,
+                                      Boolean                       IncludeMultiAndHyperEdges   = false,
+
+                                      Func<TIdVertex,    String>    VertexIdSerializer          = null,
+                                      Func<TIdEdge,      String>    EdgeIdSerializer            = null,
+                                      Func<TIdMultiEdge, String>    MultiEdgeIdSerializer       = null,
+                                      Func<TIdHyperEdge, String>    HyperEdgeIdSerializer       = null,
+
+                                      Func<TKeyVertex,   String>    TKeyVertexSerializer        = null,
+                                      Func<TValueVertex, String>    TValueVertexSerializer      = null,
+                                      Func<TKeyEdge,     String>    TKeyEdgeSerializer          = null,
+                                      Func<TValueEdge,   String>    TValueEdgeSerializer        = null)
 
             : base(IncludePropertyTypes, IgnoreUnknownPropertyTypes, IncludeMultiAndHyperEdges)
 
         {
+
+            this.VertexIdSerializer         = (VertexIdSerializer     != null) ? VertexIdSerializer     : VertexId    => (typeof(TIdVertex)    == typeof(UInt64)) ? VertexId.ToString()    : "\"" + HttpUtility.UrlEncode(VertexId.   ToString()) + "\"";
+            this.EdgeIdSerializer           = (EdgeIdSerializer       != null) ? EdgeIdSerializer       : EdgeId      => (typeof(TIdEdge)      == typeof(UInt64)) ? EdgeId.ToString()      : "\"" + HttpUtility.UrlEncode(EdgeId.     ToString()) + "\"";
+            this.MultiEdgeIdSerializer      = (MultiEdgeIdSerializer  != null) ? MultiEdgeIdSerializer  : MultiEdgeId => (typeof(TIdMultiEdge) == typeof(UInt64)) ? MultiEdgeId.ToString() : "\"" + HttpUtility.UrlEncode(MultiEdgeId.ToString()) + "\"";
+            this.HyperEdgeIdSerializer      = (HyperEdgeIdSerializer  != null) ? HyperEdgeIdSerializer  : HyperEdgeId => (typeof(TIdHyperEdge) == typeof(UInt64)) ? HyperEdgeId.ToString() : "\"" + HttpUtility.UrlEncode(HyperEdgeId.ToString()) + "\"";
+
+            this.TKeyVertexSerializer       = (TKeyVertexSerializer   != null) ? TKeyVertexSerializer   : VertexKey   =>                                                                         "\"" + HttpUtility.UrlEncode(VertexKey.ToString())   + "\"";
+            this.TValueVertexSerializer     = (TValueVertexSerializer != null) ? TValueVertexSerializer : VertexValue => (VertexValue.GetType() == typeof(UInt64)) ? VertexValue.ToString()    : "\"" + HttpUtility.UrlEncode(VertexValue.ToString()) + "\"";
+            this.TKeyEdgeSerializer         = (TKeyEdgeSerializer     != null) ? TKeyEdgeSerializer     : EdgeKey     =>                                                                         "\"" + HttpUtility.UrlEncode(EdgeKey.ToString())     + "\"";
+            this.TValueEdgeSerializer       = (TValueEdgeSerializer   != null) ? TValueEdgeSerializer   : EdgeValue   => (EdgeValue.GetType()   == typeof(UInt64)) ? EdgeValue.  ToString()    : "\"" + HttpUtility.UrlEncode(EdgeValue.ToString())   + "\"";
+
 
             if (IncludePropertyTypes)
             {

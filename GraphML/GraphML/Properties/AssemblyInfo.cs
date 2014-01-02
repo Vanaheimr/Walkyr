@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GraphML")]
-[assembly: AssemblyDescription("GraphML file format library for Balder property graphs.")]
+[assembly: AssemblyDescription("GraphML graph file format library for Balder property graphs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ahzf.de")]
+[assembly: AssemblyCompany("GraphDefined")]
 [assembly: AssemblyProduct("GraphML")]
-[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010-2012")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

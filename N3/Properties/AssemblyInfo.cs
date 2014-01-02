@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("N3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("N3 triple graph format library for Blader property graphs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GraphDefined")]
 [assembly: AssemblyProduct("N3")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GEXFTests")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

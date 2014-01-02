@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DGML")]
-[assembly: AssemblyDescription("DGML file format library for Blueprints.NET property graphs.")]
+[assembly: AssemblyDescription("DGML graph file format library for Balder property graphs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ahzf.de")]
+[assembly: AssemblyCompany("GraphDefined")]
 [assembly: AssemblyProduct("DGML")]
-[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010-2012")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

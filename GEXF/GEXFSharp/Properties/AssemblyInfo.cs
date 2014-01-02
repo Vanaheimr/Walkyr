@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("GEXFSharp")]
-[assembly: AssemblyDescription("GEXF Graph File Format Library for .NET and Mono")]
+[assembly: AssemblyDescription("GEXF graph file format library for Balder property graphs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GraphDefined")]
 [assembly: AssemblyProduct("GEXFSharp")]
-[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

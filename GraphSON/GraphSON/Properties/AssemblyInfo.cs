@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GraphSON")]
-[assembly: AssemblyDescription("GraphSON format library for Blueprints.NET property graphs.")]
+[assembly: AssemblyDescription("GraphSON graph format library for Balder property graphs.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ahzf.de")]
-[assembly: AssemblyProduct("de.ahzf.Vanaheimr.Walkyr.GraphSON")]
-[assembly: AssemblyCopyright("Copyright © Achim 'ahzf' Friedland 2010-2012")]
+[assembly: AssemblyCompany("GraphDefined")]
+[assembly: AssemblyProduct("GraphSON")]
+[assembly: AssemblyCopyright("Copyright © 2011-2014 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

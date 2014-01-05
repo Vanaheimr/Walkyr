@@ -18,10 +18,8 @@
 #region Usings
 
 using System;
-using System.Collections.Generic;
 
 using eu.Vanaheimr.Balder;
-using eu.Vanaheimr.Illias.Commons;
 
 #endregion
 
@@ -29,7 +27,7 @@ namespace eu.Vanaheimr.Walkyr
 {
 
     /// <summary>
-    /// An interface for serializing generic property vertices.
+    /// An interface for deserializing generic property edges.
     /// </summary>
     /// <typeparam name="TIdVertex">The type of the vertex identifiers.</typeparam>
     /// <typeparam name="TRevIdVertex">The type of the vertex revision identifiers.</typeparam>
@@ -55,12 +53,12 @@ namespace eu.Vanaheimr.Walkyr
     /// <typeparam name="TKeyHyperEdge">The type of the hyperedge property keys.</typeparam>
     /// <typeparam name="TValueHyperEdge">The type of the hyperedge property values.</typeparam>
     /// 
-    /// <typeparam name="TFormat">The I/O-format of the serializer.</typeparam>
-    public interface IVertexSerializer<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                       TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                       TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                       TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge,
-                                       TFormat>
+    /// <typeparam name="TFormat">The I/O-format of the deserializer.</typeparam>
+    public interface IEdgeParser<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                 TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                 TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                 TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge,
+                                 TFormat>
 
         where TIdVertex        : IEquatable<TIdVertex>,       IComparable<TIdVertex>,       IComparable, TValueVertex
         where TIdEdge          : IEquatable<TIdEdge>,         IComparable<TIdEdge>,         IComparable, TValueEdge
@@ -85,20 +83,21 @@ namespace eu.Vanaheimr.Walkyr
     {
 
         /// <summary>
-        /// Serialize the given vertex.
+        /// Deserialize the given serialized edge.
         /// </summary>
-        /// <param name="Vertex">A generic property vertex.</param>
-        /// <param name="PropertyMapper">A delegate to map a given KeyValuePair to another KeyValuePair.</param>
-        /// <param name="PropertyFilter">A delegate to filter out some properties.</param>
-        /// <param name="KeyFilter">An enumeration of property keys to be removed.</param>
-        TFormat Serialize(IReadOnlyGenericPropertyVertex<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                                         TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                                         TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                         TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Vertex,
+        /// <param name="Graph"></param>
+        /// <param name="SerializedVertex"></param>
+        IReadOnlyGenericPropertyEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                     TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                     TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                     TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge>
 
-                          KeyValueFilter<TKeyVertex, TValueVertex> PropertyFilter  = null,
-                          IEnumerable   <TKeyVertex>               KeyFilter       = null,
-                          KeyValueMapper<TKeyVertex, TValueVertex> PropertyMapper  = null);
+            ParseEdge(IGenericPropertyGraph<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
+                                            TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                            TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                            TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Graph,
+
+                      TFormat SerializedEdge);
 
     }
 

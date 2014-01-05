@@ -64,7 +64,7 @@ namespace eu.Vanaheimr.Walkyr.GraphML
         /// <param name="IncludePropertyTypes">Wether the property types should be included or not.</param>
         /// <param name="IgnoreUnknownPropertyTypes">Wether to ignore properties with unknown property types.</param>
         /// <param name="IncludeMultiAndHyperEdges">Wether the multi- and hyperedges should be included or not.</param>
-        public static IGraphSerializer<TIdVertex, TRevIdVertex, TVertexLabel, TKeyVertex, TValueVertex,
+        public static IGraphIO<TIdVertex, TRevIdVertex, TVertexLabel, TKeyVertex, TValueVertex,
                                        TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
                                        TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
                                        TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge,

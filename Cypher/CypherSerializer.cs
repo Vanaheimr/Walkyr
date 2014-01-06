@@ -260,7 +260,7 @@ namespace eu.Vanaheimr.Walkyr.Cypher
                 Properties = Properties.Where(property => !KeyFilter.Contains(property.Key));
 
             var SerializedProperties = Properties.Select(property => property.Key + ": " + ObjectSerializer(property.Value)).
-                                                  SaveAggregate((a, b) => a + ", " + b, "");
+                                                  AggregateOrDefault((a, b) => a + ", " + b, "");
 
             if (SerializedProperties.Length > 0)
                 return CypherString + " { " + SerializedProperties + " } )";

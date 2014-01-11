@@ -68,7 +68,7 @@
 //                            IEnumerable<String> IEnumerable                = null,
 //                            IEnumerator<String> IEnumerator                = null)
 
-//            : base(IEnumerable, IEnumerator)
+//            : base(IEnumerable)
 
 //        {
 

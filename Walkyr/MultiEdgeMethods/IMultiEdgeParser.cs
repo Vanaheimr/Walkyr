@@ -19,11 +19,11 @@
 
 using System;
 
-using eu.Vanaheimr.Balder;
+using org.GraphDefined.Vanaheimr.Balder;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr
+namespace org.GraphDefined.Vanaheimr.Walkyr
 {
 
     /// <summary>

@@ -25,15 +25,15 @@ using System.Text;
 using System.Threading;
 using System.Collections.Generic;
 
-using eu.Vanaheimr.Illias.Commons;
-using eu.Vanaheimr.Illias.Commons.Collections;
-using eu.Vanaheimr.Balder;
-using eu.Vanaheimr.Styx;
-using eu.Vanaheimr.Walkyr;
+using org.GraphDefined.Vanaheimr.Illias;
+using org.GraphDefined.Vanaheimr.Illias.Collections;
+using org.GraphDefined.Vanaheimr.Balder;
+using org.GraphDefined.Vanaheimr.Styx;
+using org.GraphDefined.Vanaheimr.Walkyr;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr.BalderSON
+namespace org.GraphDefined.Vanaheimr.Walkyr.BalderSON
 {
 
     /// <summary>

@@ -18,14 +18,14 @@
 #region Usings
 
 using System;
-
-using eu.Vanaheimr.Balder;
-using eu.Vanaheimr.Illias.Commons;
 using System.Collections.Generic;
+
+using org.GraphDefined.Vanaheimr.Illias;
+using org.GraphDefined.Vanaheimr.Balder;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr
+namespace org.GraphDefined.Vanaheimr.Walkyr
 {
 
     /// <summary>

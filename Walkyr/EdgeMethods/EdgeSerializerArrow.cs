@@ -19,13 +19,13 @@
 
 using System;
 
-using eu.Vanaheimr.Styx;
-using eu.Vanaheimr.Balder;
-using eu.Vanaheimr.Styx.Arrows;
+using org.GraphDefined.Vanaheimr.Styx;
+using org.GraphDefined.Vanaheimr.Balder;
+using org.GraphDefined.Vanaheimr.Styx.Arrows;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr
+namespace org.GraphDefined.Vanaheimr.Walkyr
 {
 
     #region IEdgeSerializerExtentions

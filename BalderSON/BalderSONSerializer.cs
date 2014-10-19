@@ -22,13 +22,13 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
-using eu.Vanaheimr.Illias.Commons;
-using eu.Vanaheimr.Illias.Commons.Collections;
-using eu.Vanaheimr.Balder;
+using org.GraphDefined.Vanaheimr.Illias;
+using org.GraphDefined.Vanaheimr.Illias.Collections;
+using org.GraphDefined.Vanaheimr.Balder;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr.BalderSON
+namespace org.GraphDefined.Vanaheimr.Walkyr.BalderSON
 {
 
     /// <summary>

@@ -225,7 +225,7 @@ namespace org.GraphDefined.Vanaheimr.Walkyr.BalderSON
             Graph.Vertices().ForEach(Vertex => Body.AppendLine(this.Serialize(Vertex)));
             Graph.Edges()   .ForEach(Edge   => Body.AppendLine(this.Serialize(Edge)));
 
-            return "";
+            return Body.ToString();
 
         }
 

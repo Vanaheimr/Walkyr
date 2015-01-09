@@ -19,14 +19,14 @@
 
 using System;
 using System.Text;
-
-using eu.Vanaheimr.Illias.Commons;
-using eu.Vanaheimr.Balder;
 using System.Collections.Generic;
+
+using org.GraphDefined.Vanaheimr.Illias;
+using org.GraphDefined.Vanaheimr.Balder;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr.GraphML
+namespace org.GraphDefined.Vanaheimr.Walkyr.GraphML
 {
 
     /// <summary>

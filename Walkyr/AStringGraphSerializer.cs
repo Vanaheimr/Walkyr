@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2010-2014, Achim 'ahzf' Friedland <achim@graphdefined.org>
+ * Copyright (c) 2010-2015, Achim 'ahzf' Friedland <achim@graphdefined.org>
  * This file is part of Walkyr <http://www.github.com/Vanaheimr/Walkyr>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,6 +21,7 @@ using System;
 using System.Web;
 using System.Collections.Generic;
 
+using org.GraphDefined.Vanaheimr.Illias;
 using org.GraphDefined.Vanaheimr.Balder;
 
 #endregion
@@ -89,15 +90,15 @@ namespace org.GraphDefined.Vanaheimr.Walkyr
 
         #region Data
 
-        protected readonly Func<TIdVertex,    String>                             VertexIdSerializer;
-        protected readonly Func<TIdEdge,      String>                             EdgeIdSerializer;
-        protected readonly Func<TIdMultiEdge, String>                             MultiEdgeIdSerializer;
-        protected readonly Func<TIdHyperEdge, String>                             HyperEdgeIdSerializer;
+        protected readonly Func<TIdVertex,    String>  VertexIdSerializer;
+        protected readonly Func<TIdEdge,      String>  EdgeIdSerializer;
+        protected readonly Func<TIdMultiEdge, String>  MultiEdgeIdSerializer;
+        protected readonly Func<TIdHyperEdge, String>  HyperEdgeIdSerializer;
 
-        protected readonly Func<TKeyVertex,   String>                             TKeyVertexSerializer;
-        protected readonly Func<TValueVertex, String>                             TValueVertexSerializer;
-        protected readonly Func<TKeyEdge,     String>                             TKeyEdgeSerializer;
-        protected readonly Func<TValueEdge,   String>                             TValueEdgeSerializer;
+        protected readonly Func<TKeyVertex,   String>  TKeyVertexSerializer;
+        protected readonly Func<TValueVertex, String>  TValueVertexSerializer;
+        protected readonly Func<TKeyEdge,     String>  TKeyEdgeSerializer;
+        protected readonly Func<TValueEdge,   String>  TValueEdgeSerializer;
 
 
         /// <summary>
@@ -155,10 +156,49 @@ namespace org.GraphDefined.Vanaheimr.Walkyr
             this.MultiEdgeIdSerializer      = (MultiEdgeIdSerializer  != null) ? MultiEdgeIdSerializer  : MultiEdgeId => (typeof(TIdMultiEdge) == typeof(UInt64)) ? MultiEdgeId.ToString() : "\"" + HttpUtility.UrlEncode(MultiEdgeId.ToString()) + "\"";
             this.HyperEdgeIdSerializer      = (HyperEdgeIdSerializer  != null) ? HyperEdgeIdSerializer  : HyperEdgeId => (typeof(TIdHyperEdge) == typeof(UInt64)) ? HyperEdgeId.ToString() : "\"" + HttpUtility.UrlEncode(HyperEdgeId.ToString()) + "\"";
 
-            this.TKeyVertexSerializer       = (TKeyVertexSerializer   != null) ? TKeyVertexSerializer   : VertexKey   =>                                                                         "\"" + HttpUtility.UrlEncode(VertexKey.ToString())   + "\"";
-            this.TValueVertexSerializer     = (TValueVertexSerializer != null) ? TValueVertexSerializer : VertexValue => (VertexValue.GetType() == typeof(UInt64)) ? VertexValue.ToString()    : "\"" + HttpUtility.UrlEncode(VertexValue.ToString()) + "\"";
-            this.TKeyEdgeSerializer         = (TKeyEdgeSerializer     != null) ? TKeyEdgeSerializer     : EdgeKey     =>                                                                         "\"" + HttpUtility.UrlEncode(EdgeKey.ToString())     + "\"";
-            this.TValueEdgeSerializer       = (TValueEdgeSerializer   != null) ? TValueEdgeSerializer   : EdgeValue   => (EdgeValue.GetType()   == typeof(UInt64)) ? EdgeValue.  ToString()    : "\"" + HttpUtility.UrlEncode(EdgeValue.ToString())   + "\"";
+            this.TKeyVertexSerializer       = (TKeyVertexSerializer   != null) ? TKeyVertexSerializer   : VertexKey   => "\"" + HttpUtility.UrlEncode(VertexKey.ToString())   + "\"";
+            this.TValueVertexSerializer     = (TValueVertexSerializer != null) ? TValueVertexSerializer : VertexValue => {
+
+                var _Type = VertexValue.GetType();
+
+                if (_Type == typeof(  Byte) ||
+                    _Type == typeof( Int16) ||
+                    _Type == typeof(UInt16) ||
+                    _Type == typeof( Int32) ||
+                    _Type == typeof(UInt32) ||
+                    _Type == typeof( Int64) ||
+                    _Type == typeof(UInt64))
+                    return VertexValue.ToString();
+
+                var ListValue = VertexValue as List<Object>;
+                if (ListValue != null)
+                    return ("[ " + ListValue.SafeSelect(Item => "\"" + HttpUtility.UrlEncode(Item.ToString()) + "\"").AggregateWith(", ") + " ]");
+
+                return "\"" + HttpUtility.UrlEncode(VertexValue.ToString()) + "\"";
+
+            };
+
+            this.TKeyEdgeSerializer         = (TKeyEdgeSerializer     != null) ? TKeyEdgeSerializer     : EdgeKey     => "\"" + HttpUtility.UrlEncode(EdgeKey.ToString())     + "\"";
+            this.TValueEdgeSerializer       = (TValueEdgeSerializer   != null) ? TValueEdgeSerializer   : EdgeValue   => {
+
+                var _Type = EdgeValue.GetType();
+
+                if (_Type == typeof(  Byte) ||
+                    _Type == typeof( Int16) ||
+                    _Type == typeof(UInt16) ||
+                    _Type == typeof( Int32) ||
+                    _Type == typeof(UInt32) ||
+                    _Type == typeof( Int64) ||
+                    _Type == typeof(UInt64))
+                    return EdgeValue.ToString();
+
+                var ListValue = EdgeValue as List<Object>;
+                if (ListValue != null)
+                    return ("[ " + ListValue.SafeSelect(Item => "\"" + HttpUtility.UrlEncode(Item.ToString()) + "\"").AggregateWith(", ") + " ]");
+
+                return "\"" + HttpUtility.UrlEncode(EdgeValue.ToString()) + "\"";
+
+            };
 
 
             if (IncludePropertyTypes)

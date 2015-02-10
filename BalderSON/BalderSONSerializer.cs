@@ -241,20 +241,20 @@ namespace org.GraphDefined.Vanaheimr.Walkyr.BalderSON
 
         {
 
-            var VertexPropertyList = new List<String>();
-            var VertexPropertyValue = "";
+            var VertexPropertyList   = new List<String>();
+            var VertexPropertyValue  = "";
 
-            foreach (var p in Properties)
+            foreach (var Property in Properties)
             {
 
-                var _JSONString = p.Value as JSONString;
+                var _JSONString = Property.Value as JSONString;
 
                 if (_JSONString != null)
                     VertexPropertyValue = _JSONString.JSONString;
                 else
-                    VertexPropertyValue = ValueSerializer(p.Value);
+                    VertexPropertyValue = ValueSerializer(Property.Value);
 
-                VertexPropertyList.Add(String.Concat(@"""", p.Key, @""": ", VertexPropertyValue));
+                VertexPropertyList.Add(String.Concat(@"""", Property.Key, @""": ", VertexPropertyValue));
 
             }
 

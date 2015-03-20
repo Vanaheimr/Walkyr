@@ -34,8 +34,8 @@ namespace GEXFSharp
     public interface IDynamic<T>
     {
 
-	    DateTime? StartDate { get; set; }
-	    DateTime? EndDate   { get; set; }
+        DateTime? StartDate { get; set; }
+        DateTime? EndDate   { get; set; }
 
     }
 

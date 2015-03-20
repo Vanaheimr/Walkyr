@@ -33,7 +33,7 @@ namespace GEXFSharp
     {
 
         public static Tuple<Byte, Byte, Byte> BLACK     = new Tuple<Byte, Byte, Byte>(  0,   0,   0);
-	    public static Tuple<Byte, Byte, Byte> RED       = new Tuple<Byte, Byte, Byte>(255,   0,   0);
+        public static Tuple<Byte, Byte, Byte> RED       = new Tuple<Byte, Byte, Byte>(255,   0,   0);
         public static Tuple<Byte, Byte, Byte> GREEN     = new Tuple<Byte, Byte, Byte>(  0, 255,   0);
         public static Tuple<Byte, Byte, Byte> BLUE      = new Tuple<Byte, Byte, Byte>(  0,   0, 255);
         public static Tuple<Byte, Byte, Byte> YELLOW    = new Tuple<Byte, Byte, Byte>(255, 255,   0);

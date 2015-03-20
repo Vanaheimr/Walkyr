@@ -37,24 +37,24 @@ namespace GEXFSharp
 
         private List<IAttributeValue> _List;
 
-	    public AttributeValueList() {
-		    // do nothing
-	    }
+        public AttributeValueList() {
+            // do nothing
+        }
 
         public IAttributeValueList AddValue(IAttribute attribute, String value) {
-		    CreateValue(attribute, value);
-		    return this;
-	    }
+            CreateValue(attribute, value);
+            return this;
+        }
 
-	    public IAttributeValue CreateValue(IAttribute attribute, String value) {
-//		    checkArgument(value != null, "Value cannot be null.");
+        public IAttributeValue CreateValue(IAttribute attribute, String value) {
+//            checkArgument(value != null, "Value cannot be null.");
             throw new NotImplementedException();
             //AttributeValue rv = new AttributeValue(attribute);
             //rv.setValue(value);
             //_List.Add(rv);
 
             //return rv;
-	    }
+        }
 
 
     }

@@ -33,9 +33,9 @@ namespace GEXFSharp
     public class Slice : ADynamic<ISlice>, ISlice
     {
 
-	    protected override ISlice GetSelf() {
-		    return this;
-	    }
+        protected override ISlice GetSelf() {
+            return this;
+        }
 
     }
     

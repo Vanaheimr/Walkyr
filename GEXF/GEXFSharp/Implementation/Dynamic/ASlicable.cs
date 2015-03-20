@@ -34,15 +34,15 @@ namespace GEXFSharp
     public abstract class ASlicable<T> : ADynamic<T>, ISlicable<T>
     {
 
-	    private List<ISlice> slices = null;
+        private List<ISlice> slices = null;
 
-	    public ASlicable() {
-		    slices = new List<ISlice>();
-	    }
+        public ASlicable() {
+            slices = new List<ISlice>();
+        }
 
-	    public IEnumerable<ISlice> getSlices() {
-		    return slices;
-	    }
+        public IEnumerable<ISlice> getSlices() {
+            return slices;
+        }
 
     }
 

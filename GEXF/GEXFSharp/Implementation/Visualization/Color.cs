@@ -39,7 +39,7 @@ namespace GEXFSharp
 
         public Color()
         {
-	    }
+        }
 
         #endregion
 
@@ -50,7 +50,7 @@ namespace GEXFSharp
             Red   = myRed;
             Green = myGreen;
             Blue  = myBlue;
-	    }
+        }
 
         #endregion
 
@@ -61,7 +61,7 @@ namespace GEXFSharp
             Red   = myColorTriple.Item1;
             Green = myColorTriple.Item2;
             Blue  = myColorTriple.Item3;
-	    }
+        }
 
         #endregion
 

@@ -35,47 +35,47 @@ namespace GEXFSharp
     public class Attribute : IAttribute
     {
 
-	    private String defaultValue = null;
+        private String defaultValue = null;
 
         private List<String> options = null;
 
 
 
-	    public Attribute(String id, AttributeType type, String title) {
-//		    checkArgument(id != null, "ID cannot be null.");
-//		    checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
-//		    checkArgument(title != null, "Title cannot be null.");
-//		    checkArgument(!title.trim().isEmpty(), "Title cannot be null or blank.");
+        public Attribute(String id, AttributeType type, String title) {
+//            checkArgument(id != null, "ID cannot be null.");
+//            checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+//            checkArgument(title != null, "Title cannot be null.");
+//            checkArgument(!title.trim().isEmpty(), "Title cannot be null or blank.");
 
-		    Id = id;
+            Id = id;
             AttributeType = type;
-		    this.options = new List<String>();
-		    Title = title;
-	    }
+            this.options = new List<String>();
+            Title = title;
+        }
 
-	    public IAttribute clearDefaultValue() {
-		    defaultValue = null;
-		    return this;
-	    }
+        public IAttribute clearDefaultValue() {
+            defaultValue = null;
+            return this;
+        }
 
 
-	    public String        DefaultValue   { get; set; }
-	    public String        Id             { get; set; }
-	    public String        Title          { get; set; }
+        public String        DefaultValue   { get; set; }
+        public String        Id             { get; set; }
+        public String        Title          { get; set; }
         public AttributeType AttributeType  { get; protected set; }
 
 
-	    public IEnumerable<String> getOptions() {
-		    return options;
-	    }
+        public IEnumerable<String> getOptions() {
+            return options;
+        }
 
-	    public Boolean hasDefaultValue() {
-		    return (defaultValue != null);
-	    }
+        public Boolean hasDefaultValue() {
+            return (defaultValue != null);
+        }
 
 
 //        public IAttributeValue CreateValue(String value) {
-////		    checkArgument(value != null, "Value cannot be null.");
+////            checkArgument(value != null, "Value cannot be null.");
 //            AttributeValue rv = new AttributeValue(this);
 //            rv.setValue(value);
 //            return rv;

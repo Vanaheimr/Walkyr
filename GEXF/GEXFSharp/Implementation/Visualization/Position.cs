@@ -39,7 +39,7 @@ namespace GEXFSharp
 
         public Position()
         {
-	    }
+        }
 
         #endregion
 
@@ -50,7 +50,7 @@ namespace GEXFSharp
             X = myX;
             Y = myY;
             Z = myZ;
-	    }
+        }
 
         #endregion
 

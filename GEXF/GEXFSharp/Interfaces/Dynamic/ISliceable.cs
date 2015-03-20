@@ -34,7 +34,7 @@ namespace GEXFSharp
     public interface ISlicable<T> : IDynamic<T>
     {
 
-	    IEnumerable<ISlice> getSlices();
+        IEnumerable<ISlice> getSlices();
 
     }
 

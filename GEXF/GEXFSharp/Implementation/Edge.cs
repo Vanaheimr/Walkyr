@@ -69,9 +69,9 @@ namespace GEXFSharp
             if (myTarget == null)
                 throw new ArgumentNullException("myTarget must not be null!");
 
-		    Id       = myId;
-		    Source   = mySource;
-		    Target   = myTarget;
+            Id       = myId;
+            Source   = mySource;
+            Target   = myTarget;
             EdgeType = myEdgeType;
 
             // Attributes
@@ -79,7 +79,7 @@ namespace GEXFSharp
             Weight   = 1;
             Shape    = EdgeShape.NOTSET;
 
-	    }
+        }
 
         #endregion
 
@@ -90,7 +90,7 @@ namespace GEXFSharp
 
         protected override Edge GetSelf()
         {
-		    return this;
+            return this;
         }
 
         #endregion

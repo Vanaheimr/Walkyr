@@ -25,9 +25,9 @@ namespace GEXFSharp
 
     public enum EdgeType
     {
-	    DIRECTED,
-	    UNDIRECTED,
-	    MUTUAL
+        DIRECTED,
+        UNDIRECTED,
+        MUTUAL
     }
 
 }

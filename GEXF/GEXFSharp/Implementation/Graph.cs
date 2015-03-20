@@ -37,9 +37,13 @@ namespace GEXFSharp
         #region Properties
 
         public IDType   IDType          { get; set; }
-	    public Mode     Mode            { get; set; }
-	    public TimeType TimeType        { get; set; }
+
+        public Mode     Mode            { get; set; }
+
+        public TimeType TimeType        { get; set; }
+
         public EdgeType DefaultEdgeType { get; set; }
+
 
         #region AttributeLists
 
@@ -96,15 +100,15 @@ namespace GEXFSharp
         public Graph()
         {
 
-            IDType          = IDType.STRING;
-            Mode            = Mode.STATIC;
-            TimeType        = TimeType.DATE;
-            DefaultEdgeType = EdgeType.DIRECTED;
+            IDType           = IDType.STRING;
+            Mode             = Mode.STATIC;
+            TimeType         = TimeType.DATE;
+            DefaultEdgeType  = EdgeType.DIRECTED;
 
-		    _Nodes          = new Dictionary<String, INode>();
-		    _AttributeLists = new List<IAttributeList>();
+            _Nodes           = new Dictionary<String, INode>();
+            _AttributeLists  = new List<IAttributeList>();
 
-	    }
+        }
 
         #endregion
 

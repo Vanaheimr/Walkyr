@@ -35,38 +35,38 @@ namespace GEXFSharp
     public class AttributeValue : IAttribute
     {
 
-	    private List<String> options = null;
+        private List<String> options = null;
 
-	    public AttributeValue(String id, AttributeType type, String title) {
-//		    checkArgument(id != null, "ID cannot be null.");
-//		    checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
-//		    checkArgument(title != null, "Title cannot be null.");
-//		    checkArgument(!title.trim().isEmpty(), "Title cannot be null or blank.");
+        public AttributeValue(String id, AttributeType type, String title) {
+//            checkArgument(id != null, "ID cannot be null.");
+//            checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+//            checkArgument(title != null, "Title cannot be null.");
+//            checkArgument(!title.trim().isEmpty(), "Title cannot be null or blank.");
 
-		    Id            = id;
+            Id            = id;
             AttributeType = type;
-		    Title         = title;
+            Title         = title;
             options       = new List<String>();
         
         }
 
-	    public AttributeType AttributeType  { get; protected set; }
+        public AttributeType AttributeType  { get; protected set; }
         public String        Id             { get; set; }
         public String        Title          { get; set; }
         public String        DefaultValue   { get; set; }
 
 
-	    public IEnumerable<String> getOptions() {
-		    return options;
-	    }
+        public IEnumerable<String> getOptions() {
+            return options;
+        }
 
-	    public IAttributeValue CreateValue(String value) {
-//		    checkArgument(value != null, "Value cannot be null.");
+        public IAttributeValue CreateValue(String value) {
+//            checkArgument(value != null, "Value cannot be null.");
             throw new NotImplementedException();
             //AttributeValue rv = new AttributeValue(this);
             //rv.setValue(value);
             //return rv;
-	    }
+        }
 
     }
 

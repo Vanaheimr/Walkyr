@@ -39,7 +39,7 @@ namespace GEXFSharp
         /// <summary>
         /// A unique indentification for nodes and edges
         /// </summary>
-	    String  Id      { get; }
+        String  Id      { get; }
 
         /// <summary>
         /// A short label or description of a node or edge

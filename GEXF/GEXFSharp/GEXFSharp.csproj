@@ -98,9 +98,40 @@
     <Compile Include="Interfaces\Visualization\INodeShape.cs" />
     <Compile Include="Interfaces\Visualization\NodeShapes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Walkyr\GEXFExporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Balder\BalderGraphs\BalderGraphs.csproj">
+      <Project>{562ac94f-60ea-4911-8c62-684f02867783}</Project>
+      <Name>BalderGraphs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Balder\Balder\Balder.csproj">
+      <Project>{d2b4e7c7-0524-4de5-9d62-2de05682a74d}</Project>
+      <Name>Balder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Illias\Illias.NET4.5\Illias.NET4.5.csproj">
+      <Project>{23d37453-2d4e-4bd8-b40f-3e731fee7712}</Project>
+      <Name>Illias.NET4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Illias\Illias\Illias.csproj">
+      <Project>{e156f18d-d41c-4529-9bcc-9962e6ee25da}</Project>
+      <Name>Illias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Styx\Styx.NET4.5\Styx.NET4.5.csproj">
+      <Project>{af76ecc0-2ca5-4cff-9e1e-ff5478c4b6e4}</Project>
+      <Name>Styx.NET4.5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Styx\Styx\Styx.csproj">
+      <Project>{3949790d-8591-4101-9e4d-ce7a758e7409}</Project>
+      <Name>Styx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Walkyr\Walkyr.csproj">
+      <Project>{a3507c2e-1a82-4342-bd42-f544275d6959}</Project>
+      <Name>Walkyr</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

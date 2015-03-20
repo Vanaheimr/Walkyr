@@ -9,16 +9,16 @@ namespace GEXFSharp
     public abstract class ASliceableDatum<T> : ASlicable<T>//, ISlicableDatum<T>
     {
 
-	    private IAttributeValueList attributes = null;
+        private IAttributeValueList attributes = null;
 
         public ASliceableDatum()
         {
-		    attributes = new AttributeValueList();
-	    }
+            attributes = new AttributeValueList();
+        }
 
-	    public IAttributeValueList getAttributeValues() {
-		    return attributes;
-	    }
+        public IAttributeValueList getAttributeValues() {
+            return attributes;
+        }
 
     }
 

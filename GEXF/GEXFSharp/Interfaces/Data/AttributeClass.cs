@@ -25,8 +25,8 @@ namespace GEXFSharp
 
     public enum AttributeClass
     {
-	    NODE,
-	    EDGE
+        NODE,
+        EDGE
     }
 
 }

@@ -68,7 +68,7 @@ namespace GEXFSharp
             Metadata      = new Metadata();
             Variant       = null;
             Visualization = false;
-	    }
+        }
 
         #endregion
 

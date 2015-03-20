@@ -25,8 +25,8 @@ namespace GEXFSharp
 
     public enum TimeType
     {
-    	DATE,
-	    FLOAT
+        DATE,
+        FLOAT
     }
 
 }

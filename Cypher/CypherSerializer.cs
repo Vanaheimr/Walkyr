@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2010-2014, Achim 'ahzf' Friedland <achim@graphdefined.org>
+ * Copyright (c) 2010-2015, Achim 'ahzf' Friedland <achim@graphdefined.org>
  * This file is part of Walkyr <http://www.github.com/Vanaheimr/Walkyr>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,12 +22,12 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
-using eu.Vanaheimr.Illias.Commons;
-using eu.Vanaheimr.Balder;
+using org.GraphDefined.Vanaheimr.Illias;
+using org.GraphDefined.Vanaheimr.Balder;
 
 #endregion
 
-namespace eu.Vanaheimr.Walkyr.Cypher
+namespace org.GraphDefined.Vanaheimr.Walkyr.Cypher
 {
 
     /// <summary>
@@ -87,6 +87,8 @@ namespace eu.Vanaheimr.Walkyr.Cypher
         where TKeyHyperEdge    : IEquatable<TKeyHyperEdge>,   IComparable<TKeyHyperEdge>,   IComparable
 
     {
+
+        private static UInt64 Counter;
 
         #region Constructor(s)
 
@@ -242,7 +244,7 @@ namespace eu.Vanaheimr.Walkyr.Cypher
 
             // CREATE (n:Actor { name: "Tom Hanks", age: 21 });
 
-            var CypherString = "(" + Vertex.Id.ToString().Replace(" ", "") + ":" + Vertex.Label.ToString().Replace(" ", "");
+            var CypherString = "( Id_" + Vertex.Id.ToString().Replace(" ", "") + ":" + Vertex.Label.ToString().Replace(" ", "");
 
             var Properties = Vertex.GetProperties();
 
@@ -257,7 +259,7 @@ namespace eu.Vanaheimr.Walkyr.Cypher
                 Properties = Vertex.Where(property => !PropertyFilter(property.Key, property.Value));
 
             if (KeyFilter      != null && KeyFilter.Any())
-                Properties = Properties.Where(property => !KeyFilter.Contains(property.Key));
+                Properties = Properties.Where(property => KeyFilter.Contains(property.Key));
 
             var SerializedProperties = Properties.Select(property => property.Key + ": " + ObjectSerializer(property.Value)).
                                                   AggregateOrDefault((a, b) => a + ", " + b, "");
@@ -278,9 +280,9 @@ namespace eu.Vanaheimr.Walkyr.Cypher
         /// </summary>
         /// <param name="Edge">A edge.</param>
         public override String Serialize(IReadOnlyGenericPropertyEdge<TIdVertex,    TRevIdVertex,    TVertexLabel,    TKeyVertex,    TValueVertex,
-                                                                      TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
-                                                                      TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
-                                                                      TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Edge,
+                                                                                  TIdEdge,      TRevIdEdge,      TEdgeLabel,      TKeyEdge,      TValueEdge,
+                                                                                  TIdMultiEdge, TRevIdMultiEdge, TMultiEdgeLabel, TKeyMultiEdge, TValueMultiEdge,
+                                                                                  TIdHyperEdge, TRevIdHyperEdge, THyperEdgeLabel, TKeyHyperEdge, TValueHyperEdge> Edge,
 
                                          KeyValueFilter<TKeyVertex, TValueVertex> PropertyFilter  = null,
                                          IEnumerable   <TKeyVertex>               KeyFilter       = null,
@@ -288,7 +290,15 @@ namespace eu.Vanaheimr.Walkyr.Cypher
 
         {
 
-            return "";
+            // MATCH (out:User {username:'admin'}), (in:Role {name:'ROLE_WEB_USER'})
+            // CREATE (out)-[:HAS_ROLE]->(in)
+
+            Counter++;
+
+            return  "MATCH (out" + Counter + ":" + Edge.OutVertex.Label.ToString() + " {Id:'Id_" + Edge.OutVertex.Id.ToString() + "'}), " +
+                          "(in"  + Counter + ":" + Edge.InVertex. Label.ToString() + " {Id:'Id_" + Edge.InVertex. Id.ToString() + "'}) " +
+                          "WITH out" + Counter + ", in" + Counter + " " +
+                          "CREATE (out" + Counter + ")-[:" + Edge.Label.ToString() + "]->(in" + Counter + ")";
 
         }
 

@@ -33,7 +33,7 @@ namespace GEXFSharp.Interfaces.Data
     public interface IDatum
     {
 
-	    IAttributeValueList getAttributeValues();
+        IAttributeValueList getAttributeValues();
 
     }
 

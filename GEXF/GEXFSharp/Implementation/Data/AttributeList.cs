@@ -38,7 +38,7 @@ namespace GEXFSharp
         private readonly List<IAttribute> _List;
 
 
-	    public DateTime? EndDate   { get; set; }
+        public DateTime? EndDate   { get; set; }
         public DateTime? StartDate { get; set; }
 
         public Mode _Mode = Mode.STATIC;
@@ -67,16 +67,16 @@ namespace GEXFSharp
 
         private AttributeClass attrClass = AttributeClass.NODE;
 
-	    public AttributeList(AttributeClass attrClass) {
-		    this.attrClass = attrClass;
+        public AttributeList(AttributeClass attrClass) {
+            this.attrClass = attrClass;
             Mode = Mode.STATIC;
             _List = new List<IAttribute>();
-	    }
+        }
 
 
-	    public AttributeClass getAttributeClass() {
-		    return attrClass;
-	    }
+        public AttributeClass getAttributeClass() {
+            return attrClass;
+        }
 
         //public IAttributeList clearEndDate() {
         //    EndDate = null;
@@ -99,33 +99,33 @@ namespace GEXFSharp
         //}
 
 
-	    public IAttribute CreateAttribute(AttributeType type, String title) {
+        public IAttribute CreateAttribute(AttributeType type, String title) {
             return CreateAttribute(Guid.NewGuid().ToString(), type, title);
-	    }
+        }
 
 
-	    public IAttribute CreateAttribute(String id, AttributeType type, String title = null)
+        public IAttribute CreateAttribute(String id, AttributeType type, String title = null)
         {
-//		    checkArgument(id != null, "ID cannot be null.");
-//		    checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
-//		    checkArgument(title != null, "Title cannot be null.");
-//		    checkArgument(!title.trim().isEmpty(), "Title cannot be empty or blank.");
+//            checkArgument(id != null, "ID cannot be null.");
+//            checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+//            checkArgument(title != null, "Title cannot be null.");
+//            checkArgument(!title.trim().isEmpty(), "Title cannot be empty or blank.");
 
-		    Attribute rv = new Attribute(id, type, title);
-		    _List.Add(rv);
-		    return rv;
-	    }
-
-
-	    public IAttributeList AddAttribute(AttributeType type, String title) {
-		    return AddAttribute(Guid.NewGuid().ToString(), type, title);
-	    }
+            Attribute rv = new Attribute(id, type, title);
+            _List.Add(rv);
+            return rv;
+        }
 
 
-	    public IAttributeList AddAttribute(String id, AttributeType type, String title) {
-		    CreateAttribute(id, type, title);
-		    return this;
-	    }
+        public IAttributeList AddAttribute(AttributeType type, String title) {
+            return AddAttribute(Guid.NewGuid().ToString(), type, title);
+        }
+
+
+        public IAttributeList AddAttribute(String id, AttributeType type, String title) {
+            CreateAttribute(id, type, title);
+            return this;
+        }
 
 
 

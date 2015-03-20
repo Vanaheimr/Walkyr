@@ -34,14 +34,14 @@ namespace GEXFSharp
     public interface IGraph // : Dynamic<IGraph>
     {
 
-	    EdgeType                    DefaultEdgeType { get; set; }
+        EdgeType                    DefaultEdgeType { get; set; }
         IDType                      IDType          { get; set; }
-	    Mode                        Mode            { get; set; }
-	    TimeType                    TimeType        { get; set; }
+        Mode                        Mode            { get; set; }
+        TimeType                    TimeType        { get; set; }
 
         IEnumerable<INode>          Nodes           { get; }
         IEnumerable<IEdge>          Edges           { get; }
-	    IEnumerable<IAttributeList> AttributeLists  { get; }
+        IEnumerable<IAttributeList> AttributeLists  { get; }
 
         INode                       AddNode         (INode  myINode);
         INode                       FindNode        (String myId);

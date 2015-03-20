@@ -33,11 +33,11 @@ namespace GEXFSharp
     public interface IAttributeList : IDynamic<IAttributeList>//, IList<Attribute>
     {
 
-	    AttributeClass getAttributeClass();
+        AttributeClass getAttributeClass();
 
         Mode Mode { get; set; }
 
-	    Attribute     CreateAttribute (AttributeType type, String title, String id = null);
+        Attribute     CreateAttribute (AttributeType type, String title, String id = null);
         AttributeList AddAttribute    (AttributeType type, String title, String id = null);
 
     }

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GraphDefined")]
 [assembly: AssemblyProduct("Walkyr")]
-[assembly: AssemblyCopyright("Copyright © 2010-2014 Achim 'ahzf' Friedland")]
+[assembly: AssemblyCopyright("Copyright © 2010-2015 Achim 'ahzf' Friedland")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -47,7 +47,7 @@ namespace GEXFSharp
         public NodeShape()
             : this(NodeShapes.NOTSET)
         {
-	    }
+        }
 
         #endregion
 

@@ -33,8 +33,8 @@ namespace GEXFSharp
     public interface IAttributeValueList// : IList<IAttributeValue>
     {
 
-	    IAttributeValueList AddValue(IAttribute attribute, String value);
-	    IAttributeValue     CreateValue(IAttribute attribute, String value);
+        IAttributeValueList AddValue(IAttribute attribute, String value);
+        IAttributeValue     CreateValue(IAttribute attribute, String value);
 
     }
 

@@ -33,8 +33,8 @@ namespace GEXFSharp
     public interface IAttributeValue : IDynamic<IAttributeValue>
     {
 
-	    Attribute getAttribute();
-	    String Value { get; set; }
+        Attribute getAttribute();
+        String Value { get; set; }
   
     }
 

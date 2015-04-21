@@ -250,7 +250,7 @@ namespace org.GraphDefined.Vanaheimr.Walkyr.BalderSON
                 var _JSONString = Property.Value as JSONString;
 
                 if (_JSONString != null)
-                    VertexPropertyValue = _JSONString.JSONString;
+                    VertexPropertyValue = _JSONString.ToJSONString;
                 else
                     VertexPropertyValue = ValueSerializer(Property.Value);
 

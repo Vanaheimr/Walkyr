@@ -73,6 +73,17 @@
             The shape of this edge used for visualization
             </summary>
         </member>
+        <member name="M:GEXFSharp.INode.ConnectTo(GEXFSharp.INode)">
+            <summary>
+            Connects this node with the given target node
+            </summary>
+        </member>
+        <member name="M:GEXFSharp.INode.ConnectTo(System.String,GEXFSharp.INode)">
+            <summary>
+            Connects this node with the given target node.
+            Uses the given EdgeId for creating a new edge.
+            </summary>
+        </member>
         <member name="P:GEXFSharp.INode.Edges">
             <summary>
             Returns all edges starting at this node
@@ -96,17 +107,6 @@
         <member name="P:GEXFSharp.INode.PID">
             <summary>
             The PID of this node
-            </summary>
-        </member>
-        <member name="M:GEXFSharp.INode.ConnectTo(GEXFSharp.INode)">
-            <summary>
-            Connects this node with the given target node
-            </summary>
-        </member>
-        <member name="M:GEXFSharp.INode.ConnectTo(System.String,GEXFSharp.INode)">
-            <summary>
-            Connects this node with the given target node.
-            Uses the given EdgeId for creating a new edge.
             </summary>
         </member>
     </members>

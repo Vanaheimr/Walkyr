@@ -147,12 +147,12 @@ namespace org.GraphDefined.Vanaheimr.Walkyr.GEXF
         {
 
             var NodeAttr2Ids    = new Dictionary<UInt16,     TKeyVertex>();
-            IncludeVertexAttributes.ForEachCounted((i, s) => NodeAttr2Ids.Add((UInt16) (i-1), s));
+            IncludeVertexAttributes.ForEachCounted((s, i) => NodeAttr2Ids.Add((UInt16) (i - 1), s));
 
             var add = (UInt64) IncludeVertexAttributes.Count();
 
             var EdgeAttr2Ids    = new Dictionary<UInt16,   TKeyEdge>();
-            IncludeEdgeAttributes.  ForEachCounted((i, s) => EdgeAttr2Ids.Add((UInt16) (i-1+add), s));
+            IncludeEdgeAttributes.  ForEachCounted((s, i) => EdgeAttr2Ids.Add((UInt16) (i - 1 + add), s));
 
 
             this.GEXFGraphXML   = new XDocument(
